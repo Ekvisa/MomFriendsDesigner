@@ -17,6 +17,7 @@ p {
 
 a {
   color: inherit;
+  font-size: inherit;
 }
 
 b, .contacts li {
@@ -41,15 +42,14 @@ input {
 .darksection h1,
 .darksection h2,
 .darksection h3,
-.darksection .blog_item_name,
-.darksection .experience_cards li .row .number,
-.experience_cards li .row .darksection .number,
+.darksection .experience_cards li .number,
+.experience_cards li .darksection .number,
 .darksection h4,
 .darksection .reviews_cards li .client_name,
 .reviews_cards li .darksection .client_name,
 .darksection h5,
-.darksection .experience_cards li .row .signature,
-.experience_cards li .row .darksection .signature,
+.darksection .experience_cards li .signature,
+.experience_cards li .darksection .signature,
 .darksection b,
 .darksection .contacts li,
 .contacts .darksection li {
@@ -69,18 +69,15 @@ input {
 .faq_cards li.active h2,
 .lightsection h3,
 .contact .formcontainer h3,
-.lightsection .blog_item_name,
-.contact .formcontainer .blog_item_name,
 .faq_cards li.active h3,
-.faq_cards li.active .blog_item_name,
-.lightsection .experience_cards li .row .number,
-.contact .formcontainer .experience_cards li .row .number,
-.faq_cards li.active .experience_cards li .row .number,
-.experience_cards li .row .lightsection .number,
-.experience_cards li .row .contact .formcontainer .number,
-.contact .experience_cards li .row .formcontainer .number,
-.experience_cards li .row .faq_cards li.active .number,
-.faq_cards .experience_cards li .row li.active .number,
+.lightsection .experience_cards li .number,
+.contact .formcontainer .experience_cards li .number,
+.faq_cards li.active .experience_cards li .number,
+.experience_cards li .lightsection .number,
+.experience_cards li .contact .formcontainer .number,
+.contact .experience_cards li .formcontainer .number,
+.experience_cards li .faq_cards li.active .number,
+.faq_cards .experience_cards li li.active .number,
 .lightsection h4,
 .contact .formcontainer h4,
 .faq_cards li.active h4,
@@ -95,14 +92,14 @@ input {
 .lightsection h5,
 .contact .formcontainer h5,
 .faq_cards li.active h5,
-.lightsection .experience_cards li .row .signature,
-.contact .formcontainer .experience_cards li .row .signature,
-.faq_cards li.active .experience_cards li .row .signature,
-.experience_cards li .row .lightsection .signature,
-.experience_cards li .row .contact .formcontainer .signature,
-.contact .experience_cards li .row .formcontainer .signature,
-.experience_cards li .row .faq_cards li.active .signature,
-.faq_cards .experience_cards li .row li.active .signature,
+.lightsection .experience_cards li .signature,
+.contact .formcontainer .experience_cards li .signature,
+.faq_cards li.active .experience_cards li .signature,
+.experience_cards li .lightsection .signature,
+.experience_cards li .contact .formcontainer .signature,
+.contact .experience_cards li .formcontainer .signature,
+.experience_cards li .faq_cards li.active .signature,
+.faq_cards .experience_cards li li.active .signature,
 .lightsection b,
 .lightsection .contacts li,
 .contacts .lightsection li,
@@ -118,69 +115,15 @@ input {
   border-color: #f3d1bf;
 }
 
-.wrapper {
-  padding: 50px 10%;
+section {
+  padding: 60px 10%;
+}
+
+.wrapper, .blog_main {
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.threeblocks {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  justify-content: space-between;
-  gap: 2em;
-}
-@media (max-width: 640px) {
-  .threeblocks {
-    flex-direction: column;
-  }
-}
-@media (min-width: 1441px) {
-  .threeblocks {
-    gap: 2%;
-  }
-}
-@media (min-width: 641px) {
-  .threeblocks .mainitem {
-    width: 65%;
-  }
-}
-@media (min-width: 1441px) {
-  .threeblocks .mainitem {
-    width: 32%;
-  }
-}
-.threeblocks .minoritems {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 2em;
-}
-@media (min-width: 641px) {
-  .threeblocks .minoritems {
-    width: 25%;
-  }
-}
-@media (min-width: 1441px) {
-  .threeblocks .minoritems {
-    width: 66%;
-    gap: 3.0303030303%;
-  }
-  .threeblocks .minoritems .blog_item {
-    width: 48.4848484848%;
-  }
-}
-@media (max-width: 1440px) {
-  .threeblocks .minoritems {
-    flex-direction: column;
-  }
-}
-@media (max-width: 640px) {
-  .threeblocks {
-    flex-direction: column;
-  }
-}
 .headline {
   color: #ef6d58;
   text-transform: uppercase;
@@ -216,7 +159,7 @@ h2 {
   }
 }
 
-h3, .blog_item_name, .experience_cards li .row .number {
+h3, .experience_cards li .number {
   font-weight: 800;
   font-size: 40px;
   letter-spacing: 0;
@@ -229,7 +172,7 @@ h4, .reviews_cards li .client_name {
   line-height: 32px;
 }
 
-h5, .experience_cards li .row .signature {
+h5, .experience_cards li .signature {
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
@@ -280,12 +223,12 @@ h5, .experience_cards li .row .signature {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.jumplink, .bottom_box .docs li a, .footer_menu li a, .faq_box a, .service .more a, .header_menu li a {
+.jumplink, .bottom_box .docs li a, .footer_menu li a, .blog_main h3 a, .blog_main .experience_cards li .number a, .experience_cards li .blog_main .number a, .faq_box a, .service .more a, .header_menu li a {
   display: block;
   text-decoration: none;
   color: inherit;
 }
-.jumplink:hover, .bottom_box .docs li a:hover, .footer_menu li a:hover, .faq_box a:hover, .service .more a:hover, .header_menu li a:hover {
+.jumplink:hover, .bottom_box .docs li a:hover, .footer_menu li a:hover, .blog_main h3 a:hover, .blog_main .experience_cards li .number a:hover, .experience_cards li .blog_main .number a:hover, .faq_box a:hover, .service .more a:hover, .header_menu li a:hover {
   transform: translateY(-2px);
   text-decoration: underline;
 }
@@ -295,7 +238,7 @@ h5, .experience_cards li .row .signature {
   align-items: start;
   justify-content: center;
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
 }
 
 .center {
@@ -304,10 +247,10 @@ h5, .experience_cards li .row .signature {
 }
 
 .header_box {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
   gap: 15%;
+  display: flex;
+  align-items: last baseline;
+  justify-content: space-between;
 }
 @media (max-width: 1024px) {
   .header_box .button-contact {
@@ -324,18 +267,18 @@ h5, .experience_cards li .row .signature {
   }
 }
 .header_logo {
+  gap: 10px;
   display: flex;
   align-items: end;
   justify-content: start;
-  gap: 10px;
 }
 .header_menu {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
   gap: 5%;
   line-height: 32px;
   flex-grow: 1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
 @media (max-width: 640px) {
   .header_menu {
@@ -369,11 +312,11 @@ h5, .experience_cards li .row .signature {
 }
 
 .service_box {
+  flex-direction: column;
+  gap: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 50px;
 }
 @media (max-width: 1024px) {
   .service_cards {
@@ -399,26 +342,27 @@ h5, .experience_cards li .row .signature {
   }
 }
 .service_cards li {
-  display: flex;
-  border-width: 1px;
-  border-style: solid;
-  border-color: inherit;
   flex-direction: column;
   justify-content: space-between;
   padding: 40px;
   gap: 20px;
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
 }
 .service_cards li .line {
+  gap: 20px;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 20px;
 }
 .service_cards li .line .badge {
-  border-radius: 50%;
-  position: relative;
   background-color: #ef6d58;
   padding: 40px;
+  border-radius: 50%;
+  position: relative;
 }
 .service_cards li .line .badge img {
   position: absolute;
@@ -427,10 +371,10 @@ h5, .experience_cards li .row .signature {
   transform: translate(-50%, -50%);
 }
 .service_cards li .line .morecircle {
-  border-radius: 50%;
-  position: relative;
   background-color: white;
   padding: 20px;
+  border-radius: 50%;
+  position: relative;
 }
 .service_cards li .line .morecircle img {
   position: absolute;
@@ -438,16 +382,28 @@ h5, .experience_cards li .row .signature {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.service_cards li .line .morecircle:hover {
+  cursor: pointer;
+  filter: invert(10%);
+}
+.service .more {
+  text-align: center;
+}
 .service .more a {
   display: inline-block;
 }
 
 .buttonedheader {
+  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10%;
-  align-items: end;
+}
+@media (min-width: 1025px) {
+  .buttonedheader {
+    align-items: end;
+  }
 }
 @media (max-width: 1024px) {
   .buttonedheader {
@@ -464,14 +420,12 @@ h5, .experience_cards li .row .signature {
     width: 100%;
   }
 }
-.buttonedheader h2 {
-  transform: translateY(0.2em);
+.buttonedheader .textcontent {
+  transform: translateY(10px);
 }
 
-.portfolio {
-  padding-bottom: 50px;
-}
 .portfolio_ul {
+  padding-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -479,7 +433,6 @@ h5, .experience_cards li .row .signature {
 @media (max-width: 640px) {
   .portfolio_ul {
     flex-direction: column;
-    margin: 50px 0;
   }
 }
 .portfolio_ul li {
@@ -512,12 +465,12 @@ h5, .experience_cards li .row .signature {
   gap: 24px;
   box-sizing: border-box;
 }
-.portfolio_ul li .content h3, .portfolio_ul li .content .blog_item_name, .portfolio_ul .experience_cards li .content .row .number, .experience_cards .portfolio_ul li .content .row .number, .portfolio_ul .experience_cards li .row .content .number, .experience_cards .portfolio_ul li .row .content .number {
+.portfolio_ul li .content h3, .portfolio_ul .experience_cards li .content .number, .experience_cards .portfolio_ul li .content .number {
   white-space: nowrap;
 }
-@media (max-width: 640px) {
-  .portfolio_ul li .content h3, .portfolio_ul li .content .blog_item_name, .portfolio_ul .experience_cards li .content .row .number, .experience_cards .portfolio_ul li .content .row .number, .portfolio_ul .experience_cards li .row .content .number, .experience_cards .portfolio_ul li .row .content .number {
-    font-size: 40px;
+@media (min-width: 641px) and (max-width: 1024px) {
+  .portfolio_ul li .content h3, .portfolio_ul .experience_cards li .content .number, .experience_cards .portfolio_ul li .content .number {
+    font-size: 24px;
   }
 }
 .portfolio_ul li .content .worktype {
@@ -559,6 +512,9 @@ h5, .experience_cards li .row .signature {
     width: 100%;
   }
 }
+.experience_cards {
+  margin-top: 60px;
+}
 @media (max-width: 640px) {
   .experience_cards {
     display: flex;
@@ -580,33 +536,39 @@ h5, .experience_cards li .row .signature {
   }
   .experience_cards li {
     width: 50%;
+    box-sizing: border-box;
   }
 }
 .experience_cards li {
+  gap: 10%;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
   display: flex;
   border-width: 1px;
   border-style: solid;
   border-color: inherit;
 }
-.experience_cards li .row {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 20px;
-  margin: 40px;
-}
-.experience_cards li .row .badge {
-  border-radius: 50%;
-  position: relative;
+.experience_cards li .badge {
   padding: 56px;
   background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
 }
-.experience_cards li .row .badge img {
+.experience_cards li .badge img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media ((min-width: 641px) and (max-width: 1024px)) or (max-width: 500px) {
+  .experience_cards li {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .features {
   padding-bottom: 50px;
 }
@@ -632,23 +594,23 @@ h5, .experience_cards li .row .signature {
   }
 }
 .features_ul {
+  flex-direction: column;
+  gap: 20px;
   display: flex;
   align-items: start;
   justify-content: space-between;
-  flex-direction: column;
-  gap: 20px;
 }
 .features_ul li {
+  gap: 14px;
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 14px;
 }
 .features_ul .bullet {
-  border-radius: 50%;
-  position: relative;
   padding: 16px;
   background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
 }
 .features_ul .bullet img {
   position: absolute;
@@ -659,6 +621,26 @@ h5, .experience_cards li .row .signature {
 
 .started {
   background-color: #f9e5da;
+}
+.started_box {
+  gap: 10%;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .started_box {
+    flex-direction: column;
+    align-items: start;
+    gap: 60px;
+  }
+}
+@media (max-width: 640px) {
+  .started_box {
+    width: 85%;
+    margin: 0 auto;
+  }
 }
 .started .gift_img {
   position: absolute;
@@ -680,16 +662,13 @@ h5, .experience_cards li .row .signature {
     width: 100%;
   }
 }
-.started .wrapper {
-  padding: 100px 15%;
-}
 
 .reviews_box {
+  flex-direction: column;
+  gap: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 60px;
 }
 .reviews_box h2 {
   text-align: center;
@@ -715,6 +694,9 @@ h5, .experience_cards li .row .signature {
   }
 }
 .reviews_cards li {
+  flex-direction: column;
+  gap: 30px;
+  padding: 5%;
   display: flex;
   border-width: 1px;
   border-style: solid;
@@ -722,9 +704,6 @@ h5, .experience_cards li .row .signature {
   display: flex;
   align-items: start;
   justify-content: start;
-  flex-direction: column;
-  gap: 30px;
-  padding: 5%;
 }
 .reviews_cards li:hover {
   background-color: white;
@@ -736,23 +715,23 @@ h5, .experience_cards li .row .signature {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .reviews_cards li .client {
+  flex-wrap: wrap;
+  gap: 30px;
   display: flex;
   align-items: center;
   justify-content: start;
-  flex-wrap: wrap;
-  gap: 30px;
 }
 .reviews_cards li .client_info {
+  flex-direction: column;
   display: flex;
   align-items: start;
   justify-content: center;
-  flex-direction: column;
 }
 .reviews_cards li .client_photo {
-  border-radius: 50%;
-  position: relative;
   overflow: hidden;
   padding: 40px;
+  border-radius: 50%;
+  position: relative;
 }
 .reviews_cards li .client_photo img {
   position: absolute;
@@ -799,27 +778,27 @@ h5, .experience_cards li .row .signature {
   margin-left: 0;
 }
 .faq_cards li {
-  display: flex;
-  border-width: 1px;
-  border-style: solid;
-  border-color: inherit;
   flex-direction: column;
   gap: 40px;
   padding: 35px;
   margin-left: 0;
   margin-top: -1px;
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
 }
 .faq_cards li .item {
+  gap: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
 }
 .faq_cards li .expand {
-  border-radius: 50%;
-  position: relative;
   padding: 16px;
   background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
 }
 .faq_cards li .expand img {
   position: absolute;
@@ -835,16 +814,100 @@ h5, .experience_cards li .row .signature {
 }
 
 .logos {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  margin-top: 60px;
   flex-wrap: wrap;
   gap: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logos li {
+  cursor: pointer;
+}
+.logos li:hover {
+  filter: brightness(125%);
+}
+@media (max-width: 1024px) {
+  .logos {
+    justify-content: space-around;
+  }
 }
 
+.blog_main {
+  justify-content: space-between;
+  gap: 2em;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .blog_main {
+    flex-direction: column;
+    gap: 65px;
+  }
+  .blog_main h3, .blog_main .experience_cards li .number, .experience_cards li .blog_main .number {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media (min-width: 641px) {
+  .blog_main .mainitem {
+    width: 65%;
+  }
+}
+@media (min-width: 1441px) {
+  .blog_main .mainitem {
+    width: 32%;
+  }
+}
+.blog_main .minoritems {
+  gap: 65px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+@media (min-width: 641px) and (max-width: 1440px) {
+  .blog_main .minoritems {
+    width: 25%;
+  }
+  .blog_main .minoritems h3, .blog_main .minoritems .experience_cards li .number, .experience_cards li .blog_main .minoritems .number {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+@media (min-width: 1441px) {
+  .blog_main .minoritems {
+    width: 66%;
+    gap: 3.0303030303%;
+  }
+  .blog_main .minoritems .blog_item {
+    width: 48.4848484848%;
+  }
+}
+@media (max-width: 1440px) {
+  .blog_main .minoritems {
+    flex-direction: column;
+  }
+}
+.blog_item {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.blog_item .illustration {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
 .blog_item img {
   width: 100%;
+  display: block;
 }
+
 form input,
 form select,
 form textarea {
@@ -856,36 +919,33 @@ form textarea {
   color: #7f6454;
 }
 
-.bordered, .bottom_box, .newsletter_box {
+.bordered, .bottom_box, .newsletter .wrapper, .newsletter .blog_main {
   border-top-width: 1px;
   border-top-style: solid;
   padding-top: 50px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
 }
 
-.newsletter_box {
-  gap: 6%;
+.newsletter form {
+  gap: 20px;
+  display: flex;
 }
-@media (max-width: 1024px) {
-  .newsletter_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 30px;
+@media (min-width: 1025px) {
+  .newsletter form {
+    width: 40%;
   }
-}
-.newsletter_box form {
-  width: 50%;
-  max-width: 500px;
-  transform: translateY(-5px);
+  .newsletter form input {
+    flex-grow: 1;
+  }
 }
 @media (max-width: 640px) {
-  .newsletter_box {
-    align-items: stretch;
+  .newsletter form {
+    flex-direction: column;
+    width: 100%;
   }
 }
-
+.newsletter form input {
+  background-color: white;
+}
 .contact_box {
   display: flex;
   align-items: center;
@@ -908,14 +968,14 @@ form textarea {
   }
 }
 .contact .formcontainer {
-  display: flex;
-  align-items: stretch;
-  justify-content: start;
   flex-direction: column;
   gap: 25px;
   padding: 5%;
   width: 50%;
   border-radius: 10px;
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
 }
 @media (max-width: 1024px) {
   .contact .formcontainer {
@@ -927,31 +987,31 @@ form textarea {
   align-self: end;
 }
 .contact form {
+  flex-direction: column;
+  gap: 20px;
   display: flex;
   align-items: stretch;
   justify-content: center;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .contacts {
+  flex-direction: column;
   display: flex;
   align-items: start;
   justify-content: center;
-  flex-direction: column;
   gap: 20px;
 }
 .contacts li {
+  gap: 16px;
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 16px;
 }
 .contacts li .contacttype {
-  border-radius: 50%;
-  position: relative;
   background-color: #ef6d58;
   padding: 24px;
+  border-radius: 50%;
+  position: relative;
 }
 .contacts li .contacttype img {
   position: absolute;
@@ -1024,6 +1084,7 @@ form textarea {
   .footer_box {
     flex-direction: column;
     align-items: center;
+    gap: 50px;
   }
 }
 .footer_menu li {
@@ -1035,16 +1096,16 @@ form textarea {
   }
 }
 .footer .social {
+  gap: 10px;
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: 10px;
 }
 .footer .social li {
-  border-radius: 50%;
-  position: relative;
   padding: 25px;
   background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
 }
 .footer .social li img {
   position: absolute;
@@ -1057,22 +1118,23 @@ form textarea {
 }
 
 .bottom_box {
+  gap: 20%;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20%;
-  flex-wrap: wrap;
 }
 @media (max-width: 1024px) {
   .bottom_box {
     justify-content: center;
+    gap: 40px;
   }
 }
 .bottom_box .docs {
+  gap: 20%;
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 20%;
 }
 @media (max-width: 1024px) {
   .bottom_box .docs {

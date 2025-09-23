@@ -21,7 +21,7 @@
   </head>
   <body>
     <header class="header darksection">
-      <div class="header_box wrapper">
+      <section class="header_box wrapper">
         <div class="header_logo">
           <img src="./images/logo.png" alt="logo" />
           <h4>Personal</h4>
@@ -38,7 +38,7 @@
           Contact
         </button>
         <button type="button" class="button-transparent button-drop"></button>
-      </div>
+      </section>
     </header>
     <section class="about darksection">
       <div class="about_box wrapper">
@@ -117,7 +117,7 @@
         </div>
         <button type="button" class="button-transparent">Explore More</button>
       </div>
-      <ul class="portfolio_ul">
+      <!-- <ul class="portfolio_ul">
         <li class="design">
           <div class="content">
             <p class="worktype">Design</p>
@@ -136,26 +136,50 @@
             <h3>Work Media</h3>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </section>
-    <section class="experience lightsection">
-      <div class="experience_box wrapper">
-        <img src="./images/experience.png" alt="experience" class="bigimage" />
-        <div class="textcontent">
-          <p class="headline">Gabriel Pires</p>
-          <h2>Professional Web Designer</h2>
-          <h5>Provides a full service range</h5>
-          <p>
-            Ability to put themselves in the merchant's shoes. It is meant to
-            partner on the long run, and work as an extension of the merchant's
-            team.
-          </p>
-          <button type="button" class="button-white">See My Work</button>
+    <ul class="portfolio_ul darksection">
+      <li class="design">
+        <div class="content">
+          <p class="worktype">Design</p>
+          <h3>SOFA</h3>
         </div>
-      </div>
-      <ul class="experience_cards wrapper">
-        <li>
-          <div class="row">
+      </li>
+      <li class="branding">
+        <div class="content">
+          <p class="worktype">Branding</p>
+          <h3>KeyBoard</h3>
+        </div>
+      </li>
+      <li class="illustration">
+        <div class="content">
+          <p class="worktype">Illustration</p>
+          <h3>Work Media</h3>
+        </div>
+      </li>
+    </ul>
+    <section class="experience lightsection">
+      <div class="wrapper">
+        <div class="experience_box">
+          <img
+            src="./images/experience.png"
+            alt="experience"
+            class="bigimage"
+          />
+          <div class="textcontent">
+            <p class="headline">Gabriel Pires</p>
+            <h2>Professional Web Designer</h2>
+            <h5>Provides a full service range</h5>
+            <p>
+              Ability to put themselves in the merchant's shoes. It is meant to
+              partner on the long run, and work as an extension of the
+              merchant's team.
+            </p>
+            <button type="button" class="button-white">See My Work</button>
+          </div>
+        </div>
+        <ul class="experience_cards">
+          <li>
             <div class="badge">
               <img src="./images/tablet.png" alt="tablet" />
             </div>
@@ -163,10 +187,11 @@
               <p class="number">42%</p>
               <p class="signature">Years of experience</p>
             </div>
-          </div>
-        </li>
-        <li>
-          <div class="row">
+            <!-- <div class="row">
+              
+            </div> -->
+          </li>
+          <li>
             <div class="badge">
               <img src="./images/bag.png" alt="bag" />
             </div>
@@ -174,9 +199,12 @@
               <p class="number">73+</p>
               <p class="signature">Projects Done</p>
             </div>
-          </div>
-        </li>
-      </ul>
+            <!-- <div class="row">
+              
+            </div> -->
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="features darksection">
       <div class="features_box wrapper">
@@ -202,28 +230,26 @@
             </li>
           </ul>
         </div>
-        <img src="./images/about.png" alt="about" class="bigimage" />
+        <img src="./images/features.png" alt="features" class="bigimage" />
       </div>
     </section>
     <section class="started lightsection">
-      <div class="started_box wrapper threeblocks">
+      <div class="started_box">
         <!-- <img src="./images/gift.png" alt="gift" class="gift_img" /> !!!!!!!!!!!!!!!!!!!!!!-->
-        <div class="mainitem">
+        <div class="textcontent">
           <p class="headline">Get Started</p>
-          <h2>I Help Companies Move Faster</h2>
+          <h4>I Help Companies Move Faster</h4>
           <button type="button" class="button-orange">Contact Me</button>
         </div>
-        <div class="minoritems">
-          <p>
-            Put themselves in the merchant's shoes. It is meant to partner on
-            the long run.
-          </p>
-          <img
-            src="./images/started.png"
-            alt="started"
-            class="started_img blog_item"
-          />
-        </div>
+        <p>
+          Put themselves in the merchant's shoes. It is meant to partner on the
+          long run.
+        </p>
+        <img
+          src="./images/started.png"
+          alt="started"
+          class="started_img blog_item"
+        />
       </div>
     </section>
     <section class="reviews lightsection">
@@ -331,11 +357,11 @@
         </ul>
       </div>
       <ul class="logos wrapper">
-        <img src="./images/logos/logo1.png" alt="logo1" />
-        <img src="./images/logos/logo2.png" alt="logo2" />
-        <img src="./images/logos/logo3.png" alt="logo3" />
-        <img src="./images/logos/logo4.png" alt="logo4" />
-        <img src="./images/logos/logo5.png" alt="logo5" />
+        <li><img src="./images/logos/logo1.png" alt="logo1" /></li>
+        <li><img src="./images/logos/logo2.png" alt="logo2" /></li>
+        <li><img src="./images/logos/logo3.png" alt="logo3" /></li>
+        <li><img src="./images/logos/logo4.png" alt="logo4" /></li>
+        <li><img src="./images/logos/logo5.png" alt="logo5" /></li>
       </ul>
     </section>
     <section class="blog lightsection">
@@ -346,38 +372,38 @@
         </div>
         <button type="button" class="button-white">Discover All</button>
       </div>
-      <div class="blog_main wrapper threeblocks">
+      <div class="blog_main">
         <div class="blog_item mainitem">
-          <img src="./images/articles/article1.jpg" alt="article1" />
-          <p class="mainpoint">Stories</p>
-          <p class="blog_item_name">
-            Agency is a business you hire to outsource
-          </p>
-          <p class="date">5 Nov, 2021</p>
+          <div class="illustration">
+            <img src="./images/articles/article1.jpg" alt="article1" />
+          </div>
+          <h5>Stories</h5>
+          <h3><a href="">Agency is a business you hire to outsource</a></h3>
+          <p>5 Nov, 2021</p>
         </div>
         <div class="minoritems">
           <div class="blog_item">
-            <img src="./images/articles/article2.jpg" alt="article2" />
-            <p class="mainpoint">Design</p>
-            <p class="blog_item_name">
-              Outsource your digital marketing efforts
-            </p>
-            <p class="date">29 Oct, 2021</p>
+            <div class="illustration">
+              <img src="./images/articles/article2.jpg" alt="article2" />
+            </div>
+            <h5>Design</h5>
+            <h3><a href="">Outsource your digital marketing efforts</a></h3>
+            <p>29 Oct, 2021</p>
           </div>
           <div class="blog_item">
-            <img src="./images/articles/article3.jpg" alt="article3" />
-            <p class="mainpoint">Marketing</p>
-            <p class="blog_item_name">
-              Your business with a variety of digital
-            </p>
-            <p class="date">21 Oct, 2021</p>
+            <div class="illustration">
+              <img src="./images/articles/article3.jpg" alt="article3" />
+            </div>
+            <h5>Marketing</h5>
+            <h3><a href="">Your business with a variety of digital</a></h3>
+            <p>21 Oct, 2021</p>
           </div>
         </div>
       </div>
     </section>
-    <section class="newsletter wrapper lightsection">
-      <div class="newsletter_box">
-        <div class="newsletter_text">
+    <section class="newsletter lightsection">
+      <div class="newsletter_box buttonedheader wrapper">
+        <div class="textcontent">
           <h4>Newsletter</h4>
           <p>A digital agency is a business you hire to outsource</p>
         </div>
@@ -452,14 +478,14 @@
         <img src="./images/help.png" alt="about" class="bigimage" />
       </div>
     </section>
-    <section class="works">
+    <div class="works">
       <img src="./images/bottom/bottom1.png" alt="bottom1" />
       <img src="./images/bottom/bottom2.png" alt="bottom2" />
       <img src="./images/bottom/bottom3.png" alt="bottom3" />
       <img src="./images/bottom/bottom4.png" alt="bottom4" />
       <img src="./images/bottom/bottom5.png" alt="bottom5" />
       <img src="./images/bottom/bottom6.png" alt="bottom6" />
-    </section>
+    </div>
     <section class="footer darksection">
       <div class="footer_box wrapper">
         <h4>Personal</h4>
@@ -500,12 +526,16 @@
         </ul>
       </div>
     </section>
-    <section class="bottom wrapper darksection">
-      <div class="bottom_box">
+    <section class="bottom darksection">
+      <div class="bottom_box wrapper">
         <p class="copyright">Copyright © 2022 Laaqiq. All Rights Reserved.</p>
         <ul class="docs">
-          <li><a href="">Terms of Use</a></li>
-          <li><a href="">Privacy Policy</a></li>
+          <li>
+            <a href=""><b>Terms of Use</b></a>
+          </li>
+          <li>
+            <a href=""><b>Privacy Policy</b></a>
+          </li>
         </ul>
       </div>
     </section>

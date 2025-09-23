@@ -34,6 +34,7 @@ p {
 
 a {
   color: inherit;
+  font-size: inherit;
 }
 
 b {
@@ -82,17 +83,20 @@ input {
     border-color: $lightsectionBorder;
   }
 }
+section {
+  padding: 60px 10%;
+}
 
 .wrapper {
-  padding: 50px 10%;
+  // padding: 60px 0;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-@mixin twoblocks($tabletbreakpoint: 1024px, $mobilebreakpoint: 640px) {
+@mixin twoblocks {
   @include flex(center, space-between);
   gap: 10%;
-  @media (max-width: $tabletbreakpoint) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     align-items: start;
     gap: 50px;
@@ -100,55 +104,9 @@ input {
       order: -1;
     }
   }
-  @media (max-width: $mobilebreakpoint) {
+  @media (max-width: 640px) {
     .bigimage {
       width: 100%;
-    }
-  }
-}
-
-.threeblocks {
-  @include flex(stretch, space-between);
-  justify-content: space-between;
-  gap: 2em;
-  @media (max-width: 640px) {
-    flex-direction: column;
-  }
-  @media (min-width: 1441px) {
-    gap: 2%;
-  }
-  .mainitem {
-    @media (min-width: 641px) {
-      width: 65%;
-    }
-    @media (min-width: 1441px) {
-      width: 32%;
-    }
-  }
-  .minoritems {
-    @include flex(stretch, space-between);
-
-    gap: 2em;
-
-    @media (min-width: 641px) {
-      width: 25%;
-    }
-    @media (min-width: 1441px) {
-      width: 66%;
-      gap: calc(100% / 33);
-      .blog_item {
-        width: calc(1600% / 33);
-      }
-    }
-    @media (max-width: 1440px) {
-      flex-direction: column;
-    }
-  }
-  @media (max-width: 640px) {
-    flex-direction: column;
-  }
-  @media (max-width: 1700px) {
-    .bigitem {
     }
   }
 }
@@ -191,10 +149,13 @@ h3 {
   line-height: 48px;
 }
 
-h4 {
+@mixin h4style {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+}
+h4 {
+  @include h4style();
 }
 
 h5 {
@@ -301,7 +262,7 @@ h5 {
 .textcontent {
   @include flex(start, center);
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
 }
 
 .center {
@@ -311,8 +272,8 @@ h5 {
 
 .header {
   &_box {
-    @include flex(end, space-between);
     gap: 15%;
+    @include flex(last baseline, space-between);
     .button-contact {
       @media (max-width: 1024px) {
         display: none;
@@ -327,14 +288,15 @@ h5 {
     }
   }
   &_logo {
-    @include flex(end, start);
     gap: 10px;
+    @include flex(end, start);
   }
   &_menu {
-    @include flex(end, space-between);
     gap: 5%;
     line-height: 32px;
     flex-grow: 1;
+    @include flex(end, space-between);
+
     @media (max-width: 640px) {
       display: none;
     }
@@ -355,9 +317,9 @@ h5 {
 
 .service {
   &_box {
-    @include flex(center, center);
     flex-direction: column;
     gap: 50px;
+    @include flex(center, center);
   }
   &_cards {
     @media (max-width: 1024px) {
@@ -370,28 +332,34 @@ h5 {
       }
     }
     li {
-      @include card;
       flex-direction: column;
       justify-content: space-between;
       padding: 40px;
       gap: 20px;
+      @include card;
       .line {
-        @include flex(center, start);
         gap: 20px;
+        flex-wrap: wrap;
+        @include flex(center, start);
         .badge {
-          @include round;
           background-color: $orangeColor;
           padding: 40px;
+          @include round;
         }
         .morecircle {
-          @include round;
           background-color: white;
           padding: 20px;
+          @include round;
+          &:hover {
+            cursor: pointer;
+            filter: invert(10%);
+          }
         }
       }
     }
   }
   .more {
+    text-align: center;
     a {
       display: inline-block;
       @extend .jumplink;
@@ -400,20 +368,24 @@ h5 {
 }
 
 .buttonedheader {
-  @include twoblocks;
-  align-items: end;
-  h2 {
-    transform: translateY(0.2em);
+  margin-bottom: 60px;
+  @media (min-width: 1025px) {
+    align-items: end;
+  }
+  @include twoblocks();
+  .textcontent {
+    transform: translateY(
+      10px
+    ); // both the h2 and p in .textcontent will be more or less aligned with the bottom of the button
   }
 }
 
 .portfolio {
-  padding-bottom: 50px;
   &_ul {
+    padding-bottom: 60px;
     @include flex(center, space-between);
     @media (max-width: 640px) {
       flex-direction: column;
-      margin: 50px 0;
     }
     li {
       width: calc(100% / 3);
@@ -445,8 +417,8 @@ h5 {
         box-sizing: border-box;
         h3 {
           white-space: nowrap;
-          @media (max-width: 640px) {
-            font-size: 40px;
+          @media (min-width: 641px) and (max-width: 1024px) {
+            font-size: 24px;
           }
         }
         .worktype {
@@ -472,6 +444,7 @@ h5 {
     @include twoblocks();
   }
   &_cards {
+    margin-top: 60px;
     @media (max-width: 640px) {
       @include cards-vertical;
     }
@@ -479,25 +452,28 @@ h5 {
       @include cards-horisontal;
       li {
         width: 50%;
+        box-sizing: border-box;
       }
     }
     li {
+      gap: 10%;
+      padding: 40px;
+      @include flex(center, start);
       @include card;
-      .row {
-        @include flex(center, start);
-        gap: 20px;
-        margin: 40px;
-        .badge {
-          @include round;
-          padding: 56px;
-          background-color: $orangeColor;
-        }
-        .number {
-          @extend h3;
-        }
-        .signature {
-          @extend h5;
-        }
+      .badge {
+        padding: 56px;
+        background-color: $orangeColor;
+        @include round;
+      }
+      .number {
+        @extend h3;
+      }
+      .signature {
+        @extend h5;
+      }
+      @media ((min-width: 641px) and (max-width: 1024px)) or (max-width: 500px) {
+        flex-direction: column;
+        text-align: center;
       }
     }
   }
@@ -509,24 +485,38 @@ h5 {
     @include twoblocks();
   }
   &_ul {
-    @include flex(start, space-between);
     flex-direction: column;
     gap: 20px;
+    @include flex(start, space-between);
     li {
-      @include flex(center, start);
       gap: 14px;
+      @include flex(center, start);
     }
     .bullet {
-      @include round;
       padding: 16px;
       background-color: $orangeColor;
+      @include round;
     }
   }
 }
 
 .started {
   background-color: #f9e5da;
+  &_box {
+    gap: 10%;
+    padding: 60px 00;
+    @include flex(center, center);
 
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 60px;
+    }
+    @media (max-width: 640px) {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
   .gift_img {
     position: absolute;
     top: 0;
@@ -541,50 +531,18 @@ h5 {
       left: 25px;
     }
   }
-
-  // &_box {
-  //   @include flex(center, space-between);
-  //   position: relative;
-  //   gap: 8em;
-  //   .gift_img {
-  //     position: absolute;
-  //     top: 0;
-  //     transform: translate(0%, -50%);
-  //     &:hover {
-  //       cursor: pointer;
-  //       transform: translate(0%, -50%) scale(1.2);
-  //       filter: drop-shadow(0 0 20px $orangeColor) hue-rotate(45deg)
-  //         brightness(160%);
-  //     }
-  //     @media (max-width: 1024px) {
-  //       left: 25px;
-  //     }
-  //   }
-  //   .textinfo {
-  //   }
-  //   @media (max-width: 640px) {
-  //     flex-direction: column;
-  //     gap: 4em;
-  //     width: 70%;
-  //     align-self: center;
-  //     margin: 0 auto;
-  //   }
-  // }
   &_img {
     @media (max-width: 640px) {
       width: 100%;
     }
   }
-  .wrapper {
-    padding: 100px 15%;
-  }
 }
 
 .reviews {
   &_box {
-    @include flex(center, center);
     flex-direction: column;
     gap: 60px;
+    @include flex(center, center);
     h2 {
       text-align: center;
     }
@@ -597,11 +555,12 @@ h5 {
       @include cards-horisontal;
     }
     li {
-      @include card;
-      @include flex(start, start);
       flex-direction: column;
       gap: 30px;
       padding: 5%;
+      @include card;
+      @include flex(start, start);
+
       &:hover {
         background-color: white;
         cursor: pointer;
@@ -612,20 +571,22 @@ h5 {
         text-shadow: 0 0 5px rgba(0, 0, 0, 50%);
       }
       .client {
-        @include flex(center, start);
         flex-wrap: wrap;
         gap: 30px;
+        @include flex(center, start);
+
         &_info {
-          @include flex(start, center);
           flex-direction: column;
+          @include flex(start, center);
         }
         &_name {
           @extend h4;
         }
         &_photo {
-          @include round;
           overflow: hidden;
           padding: 40px;
+          @include round;
+
           img {
             width: 80px;
           }
@@ -648,23 +609,23 @@ h5 {
   &_cards {
     @include cards-vertical;
     li {
-      @include card;
       flex-direction: column;
       gap: 40px;
       padding: 35px;
       margin-left: 0;
       margin-top: -1px;
+      @include card;
       &.active {
         @extend .lightsection;
       }
       .item {
-        @include flex(center, space-between);
         gap: 20px;
+        @include flex(center, space-between);
       }
       .expand {
-        @include round;
         padding: 16px;
         background-color: $orangeColor;
+        @include round;
         &:hover {
           cursor: pointer;
           img {
@@ -677,68 +638,93 @@ h5 {
 }
 
 .logos {
-  @include flex(center, space-around);
+  margin-top: 60px;
   flex-wrap: wrap;
   gap: 2.5em;
+  @include flex(center, space-between);
+  li {
+    cursor: pointer;
+    &:hover {
+      filter: brightness(125%);
+    }
+  }
+  @media (max-width: 1024px) {
+    justify-content: space-around;
+    // li {
+    //   width: 25%;
+    //   text-align: center;
+    // }
+  }
+  // @media (max-width: 1024px) {
+  //   li {
+  //     width: 40%;
+  //   }
+  // }
 }
 
 .blog {
-  // &_main {
-  //   @include flex(stretch, space-between);
-  //   justify-content: space-between;
-  //   gap: 2em;
-  //   @media (max-width: 640px) {
-  //     flex-direction: column;
-  //   }
-  //   @media (min-width: 1441px) {
-  //     gap: 2%;
-  //   }
-
-  //   .mainitem {
-  //     @media (min-width: 641px) {
-  //       width: 65%;
-  //     }
-  //     @media (min-width: 1441px) {
-  //       width: 32%;
-  //     }
-  //   }
-  //   .minoritems {
-  //     @include flex(stretch, space-between);
-
-  //     gap: 2em;
-
-  //     @media (min-width: 641px) {
-  //       width: 25%;
-  //     }
-  //     @media (min-width: 1441px) {
-  //       width: 66%;
-  //       gap: calc(100% / 33);
-  //       .blog_item {
-  //         width: calc(1600% / 33);
-  //       }
-  //     }
-  //     @media (max-width: 1440px) {
-  //       flex-direction: column;
-  //     }
-  //   }
-  //   @media (max-width: 640px) {
-  //     flex-direction: column;
-  //   }
-  //   @media (max-width: 1700px) {
-  //     .bigitem {
-  //     }
-  //   }
-  // }
+  &_main {
+    justify-content: space-between;
+    gap: 2em;
+    @extend .wrapper;
+    @include flex(stretch, space-between);
+    @media (max-width: 640px) {
+      // on mobiles: MAIN ITEM IS FULL-SCREEN
+      flex-direction: column;
+      gap: 65px;
+      h3 {
+        @include h4style;
+      }
+    }
+    .mainitem {
+      @media (min-width: 641px) {
+        // on tablets: ONE BIG MAIN ITEM and small minor ones
+        width: 65%;
+      }
+      @media (min-width: 1441px) {
+        // on desctops: MAIN ITEM IS ONE THIRD (equal to the minor ones)
+        width: 32%;
+      }
+    }
+    .minoritems {
+      gap: 65px;
+      @include flex(stretch, space-between);
+      @media (min-width: 641px) and (max-width: 1440px) {
+        // on tablets: one big main item AND SMALL MINOR ONES
+        width: 25%;
+        h3 {
+          @include h4style;
+        }
+      }
+      @media (min-width: 1441px) {
+        // on desctops: MINOR ITEMS BLOCK IS TWO THIRDS (all items are equal)
+        width: 66%;
+        gap: calc(100% / 33);
+        .blog_item {
+          width: calc(1600% / 33);
+        }
+      }
+      @media (max-width: 1440px) {
+        // on mobiles: EACH MINOR ITEM IS FULL-SCREEN
+        flex-direction: column;
+      }
+    }
+    h3 a {
+      @extend .jumplink;
+    }
+  }
   &_item {
-    &_name {
-      @extend h3;
+    flex-direction: column;
+    gap: 20px;
+    @include flex(start, start);
+    .illustration {
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
     }
     img {
       width: 100%;
-    }
-    @media (max-width: 640px) {
-    }
-    @media (max-width: 1700px) {
+      display: block;
     }
   }
 }
@@ -760,29 +746,28 @@ form {
   border-top-width: 1px;
   border-top-style: solid;
   padding-top: 50px;
-  @include flex(end, space-between);
 }
 
 .newsletter {
-  &_box {
-    @extend .bordered;
-
-    gap: 6%;
-
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: start;
-      gap: 30px;
-    }
-    form {
-      // @extend .formcontainer ;
-      width: 50%;
-      max-width: 500px;
-      transform: translateY(-5px);
+  form {
+    gap: 20px;
+    display: flex; // we need an unset align-items and justify-content
+    @media (min-width: 1025px) {
+      width: 40%;
+      input {
+        flex-grow: 1;
+      }
     }
     @media (max-width: 640px) {
-      align-items: stretch;
+      flex-direction: column;
+      width: 100%;
     }
+    input {
+      background-color: white;
+    }
+  }
+  .wrapper {
+    @extend .bordered;
   }
 }
 
@@ -791,13 +776,13 @@ form {
     @include twoblocks();
   }
   .formcontainer {
-    @extend .lightsection;
-    @include flex(stretch, start);
     flex-direction: column;
     gap: 25px;
     padding: 5%;
     width: 50%;
     border-radius: 10px;
+    @extend .lightsection;
+    @include flex(stretch, start);
     @media (max-width: 1024px) {
       width: 100%;
       box-sizing: border-box;
@@ -807,24 +792,24 @@ form {
     align-self: end;
   }
   form {
-    @include flex(stretch, center);
     flex-direction: column;
     gap: 20px;
+    @include flex(stretch, center);
   }
 }
 
 .contacts {
-  @include flex(start, center);
   flex-direction: column;
+  @include flex(start, center);
   gap: 20px;
   li {
+    gap: 16px;
     @extend b;
     @include flex(center, start);
-    gap: 16px;
     .contacttype {
-      @include round;
       background-color: $orangeColor;
       padding: 24px;
+      @include round;
     }
   }
 }
@@ -834,7 +819,6 @@ form {
     @include twoblocks;
   }
 }
-
 .works {
   @include flex(center, space-between);
   img {
@@ -868,6 +852,7 @@ form {
     @media (max-width: 640px) {
       flex-direction: column;
       align-items: center;
+      gap: 50px;
     }
   }
   &_menu {
@@ -882,12 +867,14 @@ form {
     }
   }
   .social {
-    @include flex(start, space-between);
     gap: 10px;
+    @include flex(start, space-between);
+
     li {
-      @include round;
       padding: 25px;
       background-color: $orangeColor;
+      @include round;
+
       a:hover {
         img {
           filter: invert(80%);
@@ -899,17 +886,18 @@ form {
 
 .bottom {
   &_box {
-    @extend .bordered;
-    @include flex(center, space-between);
     gap: 20%;
     flex-wrap: wrap;
+    @extend .bordered;
+    @include flex(center, space-between);
     @media (max-width: 1024px) {
       justify-content: center;
+      gap: 40px;
     }
-
     .docs {
-      @include flex(center, end);
       gap: 20%;
+      @include flex(center, end);
+
       @media (max-width: 1024px) {
         justify-content: center;
       }
