@@ -20,7 +20,7 @@
     <link rel="icon" href="./images/logo.png" type="image/x-icon" />
   </head>
   <body>
-    <header class="header darksection">
+    <!-- <header class="header darksection">
       <section class="header_box wrapper">
         <div class="header_logo">
           <img src="./images/logo.png" alt="logo" />
@@ -39,8 +39,28 @@
         </button>
         <button type="button" class="button-transparent button-drop"></button>
       </section>
-    </header>
+    </header> -->
     <section class="about darksection">
+      <header class="header wrapper">
+        <!-- <div class="header_box"> -->
+        <div class="header_logo">
+          <img src="./images/logo.png" alt="logo" />
+          <h4>Personal</h4>
+        </div>
+        <ul class="header_menu">
+          <li>
+            <a href="./views/secondPage.html">About</a>
+          </li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+        <button type="button" class="button-transparent button-contact">
+          Contact
+        </button>
+        <button type="button" class="button-transparent button-drop"></button>
+        <!-- </div> -->
+      </header>
       <div class="about_box wrapper">
         <div class="textcontent">
           <p class="headline">Gabriel Pires</p>
@@ -234,8 +254,8 @@
       </div>
     </section>
     <section class="started lightsection">
-      <div class="started_box">
-        <!-- <img src="./images/gift.png" alt="gift" class="gift_img" /> !!!!!!!!!!!!!!!!!!!!!!-->
+      <div class="started_box wrapper">
+        <img src="./images/gift.png" alt="gift" class="gift_img" />
         <div class="textcontent">
           <p class="headline">Get Started</p>
           <h4>I Help Companies Move Faster</h4>
@@ -400,25 +420,26 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="newsletter lightsection">
-      <div class="newsletter_box buttonedheader wrapper">
-        <div class="textcontent">
-          <h4>Newsletter</h4>
-          <p>A digital agency is a business you hire to outsource</p>
+      <div class="newsletter">
+        <div class="newsletter_box buttonedheader wrapper">
+          <div class="textcontent">
+            <h4>Newsletter</h4>
+            <p>A digital agency is a business you hire to outsource</p>
+          </div>
+          <form action="" method="get">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              required
+            />
+            <button type="button" class="button-white">Subscribe</button>
+          </form>
         </div>
-        <form action="" method="get">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            required
-          />
-          <button type="button" class="button-white">Subscribe</button>
-        </form>
       </div>
     </section>
+
     <section class="contact darksection">
       <div class="contact_box wrapper">
         <div class="formcontainer lightsection">
@@ -525,18 +546,18 @@
           </li>
         </ul>
       </div>
-    </section>
-    <section class="bottom darksection">
-      <div class="bottom_box wrapper">
-        <p class="copyright">Copyright © 2022 Laaqiq. All Rights Reserved.</p>
-        <ul class="docs">
-          <li>
-            <a href=""><b>Terms of Use</b></a>
-          </li>
-          <li>
-            <a href=""><b>Privacy Policy</b></a>
-          </li>
-        </ul>
+      <div class="bottom">
+        <div class="bottom_box wrapper">
+          <p class="copyright">Copyright © 2022 Laaqiq. All Rights Reserved.</p>
+          <ul class="docs">
+            <li>
+              <a href=""><b>Terms of Use</b></a>
+            </li>
+            <li>
+              <a href=""><b>Privacy Policy</b></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   </body>

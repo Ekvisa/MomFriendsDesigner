@@ -116,7 +116,7 @@ input {
 }
 
 section {
-  padding: 60px 10%;
+  padding: 100px 10%;
 }
 
 .wrapper, .blog_main {
@@ -246,23 +246,24 @@ h5, .experience_cards li .signature {
   text-align: center;
 }
 
-.header_box {
+.header {
   gap: 15%;
+  margin-bottom: 100px;
   display: flex;
   align-items: last baseline;
   justify-content: space-between;
 }
 @media (max-width: 1024px) {
-  .header_box .button-contact {
+  .header .button-contact {
     display: none;
   }
 }
-.header_box .button-drop {
+.header .button-drop {
   background: url(../images/bars.svg) no-repeat center;
   height: 37px;
 }
 @media (min-width: 641px) {
-  .header_box .button-drop {
+  .header .button-drop {
     display: none;
   }
 }
@@ -394,7 +395,6 @@ h5, .experience_cards li .signature {
 }
 
 .buttonedheader {
-  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -569,9 +569,6 @@ h5, .experience_cards li .signature {
   }
 }
 
-.features {
-  padding-bottom: 50px;
-}
 .features_box {
   display: flex;
   align-items: center;
@@ -624,7 +621,7 @@ h5, .experience_cards li .signature {
 }
 .started_box {
   gap: 10%;
-  padding: 60px 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -639,23 +636,17 @@ h5, .experience_cards li .signature {
 @media (max-width: 640px) {
   .started_box {
     width: 85%;
-    margin: 0 auto;
   }
 }
 .started .gift_img {
   position: absolute;
-  top: 0;
-  transform: translate(0%, -50%);
+  left: 0;
+  top: -173px;
 }
 .started .gift_img:hover {
   cursor: pointer;
-  transform: translate(0%, -50%) scale(1.2);
+  transform: scale(1.2);
   filter: drop-shadow(0 0 20px #ef6d58) hue-rotate(45deg) brightness(160%);
-}
-@media (max-width: 1024px) {
-  .started .gift_img {
-    left: 25px;
-  }
 }
 @media (max-width: 640px) {
   .started_img {
@@ -836,6 +827,7 @@ h5, .experience_cards li .signature {
 .blog_main {
   justify-content: space-between;
   gap: 2em;
+  margin: 60px auto;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -1076,6 +1068,7 @@ form textarea {
 }
 
 .footer_box {
+  margin-bottom: 60px;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -1118,7 +1111,7 @@ form textarea {
 }
 
 .bottom_box {
-  gap: 20%;
+  gap: 20% 60px;
   flex-wrap: wrap;
   display: flex;
   align-items: center;
@@ -1131,6 +1124,7 @@ form textarea {
   }
 }
 .bottom_box .docs {
+  width: 30%;
   gap: 20%;
   display: flex;
   align-items: center;
@@ -1139,13 +1133,16 @@ form textarea {
 @media (max-width: 1024px) {
   .bottom_box .docs {
     justify-content: center;
+    width: 100%;
   }
 }
 @media (max-width: 640px) {
   .bottom_box .docs {
     justify-content: space-between;
-    width: 100%;
   }
+}
+.bottom_box .docs p {
+  text-align: center;
 }
 .bottom_box .docs li {
   white-space: nowrap;

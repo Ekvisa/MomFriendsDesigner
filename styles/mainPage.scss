@@ -84,7 +84,7 @@ input {
   }
 }
 section {
-  padding: 60px 10%;
+  padding: 100px 10%;
 }
 
 .wrapper {
@@ -271,21 +271,36 @@ h5 {
 }
 
 .header {
+  gap: 15%;
+  margin-bottom: 100px;
+  @include flex(last baseline, space-between);
+  .button-contact {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+  .button-drop {
+    background: url(../images/bars.svg) no-repeat center;
+    height: 37px;
+    @media (min-width: 641px) {
+      display: none;
+    }
+  }
   &_box {
-    gap: 15%;
-    @include flex(last baseline, space-between);
-    .button-contact {
-      @media (max-width: 1024px) {
-        display: none;
-      }
-    }
-    .button-drop {
-      background: url(../images/bars.svg) no-repeat center;
-      height: 37px;
-      @media (min-width: 641px) {
-        display: none;
-      }
-    }
+    // gap: 15%;
+    // @include flex(last baseline, space-between);
+    // .button-contact {
+    //   @media (max-width: 1024px) {
+    //     display: none;
+    //   }
+    // }
+    // .button-drop {
+    //   background: url(../images/bars.svg) no-repeat center;
+    //   height: 37px;
+    //   @media (min-width: 641px) {
+    //     display: none;
+    //   }
+    // }
   }
   &_logo {
     gap: 10px;
@@ -368,7 +383,7 @@ h5 {
 }
 
 .buttonedheader {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
   @media (min-width: 1025px) {
     align-items: end;
   }
@@ -480,7 +495,7 @@ h5 {
 }
 
 .features {
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
   &_box {
     @include twoblocks();
   }
@@ -504,9 +519,9 @@ h5 {
   background-color: #f9e5da;
   &_box {
     gap: 10%;
-    padding: 60px 00;
+    // padding: 60px 0;
+    position: relative;
     @include flex(center, center);
-
     @media (max-width: 1024px) {
       flex-direction: column;
       align-items: start;
@@ -514,22 +529,23 @@ h5 {
     }
     @media (max-width: 640px) {
       width: 85%;
-      margin: 0 auto;
     }
   }
   .gift_img {
     position: absolute;
-    top: 0;
-    transform: translate(0%, -50%);
+    left: 0;
+    top: -173px; // margin-top (100px) plus half of image size (146px/2=73px)
+
     &:hover {
       cursor: pointer;
-      transform: translate(0%, -50%) scale(1.2);
+      // transform: translate(0%, -50%) scale(1.2);
+      transform: scale(1.2);
       filter: drop-shadow(0 0 20px $orangeColor) hue-rotate(45deg)
         brightness(160%);
     }
-    @media (max-width: 1024px) {
-      left: 25px;
-    }
+    // @media (max-width: 1024px) {
+    //   left: 25px;
+    // }
   }
   &_img {
     @media (max-width: 640px) {
@@ -650,22 +666,14 @@ h5 {
   }
   @media (max-width: 1024px) {
     justify-content: space-around;
-    // li {
-    //   width: 25%;
-    //   text-align: center;
-    // }
   }
-  // @media (max-width: 1024px) {
-  //   li {
-  //     width: 40%;
-  //   }
-  // }
 }
 
 .blog {
   &_main {
     justify-content: space-between;
     gap: 2em;
+    margin: 60px auto;
     @extend .wrapper;
     @include flex(stretch, space-between);
     @media (max-width: 640px) {
@@ -848,6 +856,7 @@ form {
 
 .footer {
   &_box {
+    margin-bottom: 60px;
     @include flex(start, space-between);
     @media (max-width: 640px) {
       flex-direction: column;
@@ -886,7 +895,7 @@ form {
 
 .bottom {
   &_box {
-    gap: 20%;
+    gap: 20% 60px;
     flex-wrap: wrap;
     @extend .bordered;
     @include flex(center, space-between);
@@ -895,15 +904,19 @@ form {
       gap: 40px;
     }
     .docs {
+      width: 30%;
       gap: 20%;
       @include flex(center, end);
 
       @media (max-width: 1024px) {
         justify-content: center;
+        width: 100%;
       }
       @media (max-width: 640px) {
         justify-content: space-between;
-        width: 100%;
+      }
+      p {
+        text-align: center;
       }
       li {
         white-space: nowrap;
