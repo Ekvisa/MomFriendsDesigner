@@ -35,6 +35,13 @@ input {
   padding: 10px;
 }
 
+.lightsection .banner, .formcontainer .banner, .faq_cards li.active .banner {
+  color: #b1b2b9;
+}
+.lightsection .banner h2, .formcontainer .banner h2, .faq_cards li.active .banner h2 {
+  color: white;
+}
+
 .darksection {
   background-color: #28293e;
   color: #b1b2b9;
@@ -50,6 +57,11 @@ input {
 .darksection h5,
 .darksection .experience_cards li .signature,
 .experience_cards li .darksection .signature,
+.darksection .h1,
+.darksection .h2,
+.darksection .h3,
+.darksection .h4,
+.darksection .h5,
 .darksection b,
 .darksection .contacts li,
 .contacts .darksection li {
@@ -58,61 +70,82 @@ input {
 .darksection * {
   border-color: #3a3c56;
 }
+.darksection .logos li img {
+  filter: invert(23%) sepia(14%) saturate(1104%) hue-rotate(198deg) brightness(93%) contrast(92%);
+}
+.darksection .logos li img:hover {
+  filter: invert(80%) sepia(6%) saturate(226%) hue-rotate(195deg) brightness(89%) contrast(89%);
+}
 
-.lightsection, .contact .formcontainer, .faq_cards li.active {
+.lightsection, .formcontainer, .faq_cards li.active {
   background-color: #fdf0e9;
   color: #7f6454;
 }
-.lightsection h1, .contact .formcontainer h1, .faq_cards li.active h1,
+.lightsection h1, .formcontainer h1, .faq_cards li.active h1,
 .lightsection h2,
-.contact .formcontainer h2,
+.formcontainer h2,
 .faq_cards li.active h2,
 .lightsection h3,
-.contact .formcontainer h3,
-.faq_cards li.active h3,
 .lightsection .experience_cards li .number,
-.contact .formcontainer .experience_cards li .number,
-.faq_cards li.active .experience_cards li .number,
 .experience_cards li .lightsection .number,
-.experience_cards li .contact .formcontainer .number,
-.contact .experience_cards li .formcontainer .number,
-.experience_cards li .faq_cards li.active .number,
-.faq_cards .experience_cards li li.active .number,
+.formcontainer h3,
+.formcontainer .experience_cards li .number,
+.experience_cards li .formcontainer .number,
+.faq_cards li.active h3,
+.faq_cards .experience_cards li.active .number,
+.experience_cards .faq_cards li.active .number,
 .lightsection h4,
-.contact .formcontainer h4,
-.faq_cards li.active h4,
 .lightsection .reviews_cards li .client_name,
-.contact .formcontainer .reviews_cards li .client_name,
-.faq_cards li.active .reviews_cards li .client_name,
 .reviews_cards li .lightsection .client_name,
-.reviews_cards li .contact .formcontainer .client_name,
-.contact .reviews_cards li .formcontainer .client_name,
-.reviews_cards li .faq_cards li.active .client_name,
-.faq_cards .reviews_cards li li.active .client_name,
+.formcontainer h4,
+.formcontainer .reviews_cards li .client_name,
+.reviews_cards li .formcontainer .client_name,
+.faq_cards li.active h4,
+.faq_cards .reviews_cards li.active .client_name,
+.reviews_cards .faq_cards li.active .client_name,
 .lightsection h5,
-.contact .formcontainer h5,
-.faq_cards li.active h5,
 .lightsection .experience_cards li .signature,
-.contact .formcontainer .experience_cards li .signature,
-.faq_cards li.active .experience_cards li .signature,
 .experience_cards li .lightsection .signature,
-.experience_cards li .contact .formcontainer .signature,
-.contact .experience_cards li .formcontainer .signature,
-.experience_cards li .faq_cards li.active .signature,
-.faq_cards .experience_cards li li.active .signature,
+.formcontainer h5,
+.formcontainer .experience_cards li .signature,
+.experience_cards li .formcontainer .signature,
+.faq_cards li.active h5,
+.faq_cards .experience_cards li.active .signature,
+.experience_cards .faq_cards li.active .signature,
+.lightsection .h1,
+.formcontainer .h1,
+.faq_cards li.active .h1,
+.lightsection .h2,
+.formcontainer .h2,
+.faq_cards li.active .h2,
+.lightsection .h3,
+.formcontainer .h3,
+.faq_cards li.active .h3,
+.lightsection .h4,
+.formcontainer .h4,
+.faq_cards li.active .h4,
+.lightsection .h5,
+.formcontainer .h5,
+.faq_cards li.active .h5,
 .lightsection b,
 .lightsection .contacts li,
 .contacts .lightsection li,
-.contact .formcontainer b,
-.contact .formcontainer .contacts li,
-.contacts .contact .formcontainer li,
+.formcontainer b,
+.formcontainer .contacts li,
+.contacts .formcontainer li,
 .faq_cards li.active b,
 .faq_cards li.active .contacts li,
 .contacts .faq_cards li.active li {
   color: #391400;
 }
-.lightsection *, .contact .formcontainer *, .faq_cards li.active * {
+.lightsection *, .formcontainer *, .faq_cards li.active * {
   border-color: #f3d1bf;
+}
+.lightsection .logos li img, .formcontainer .logos li img, .faq_cards li.active .logos li img {
+  filter: invert(100%) sepia(47%) saturate(1748%) hue-rotate(297deg) brightness(100%) contrast(90%);
+}
+.lightsection .logos li img:hover, .formcontainer .logos li img:hover, .faq_cards li.active .logos li img:hover {
+  filter: invert(37%) sepia(5%) saturate(2468%) hue-rotate(338deg) brightness(105%) contrast(85%);
 }
 
 section {
@@ -124,6 +157,28 @@ section {
   margin: 0 auto;
 }
 
+.twoblocks, .help_box, .contact_box, .faq_box, .features_box, .experience_box, .buttonedheader, .welcome_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10%;
+}
+@media (max-width: 1024px) {
+  .twoblocks, .help_box, .contact_box, .faq_box, .features_box, .experience_box, .buttonedheader, .welcome_box {
+    flex-direction: column;
+    align-items: start;
+    gap: 50px;
+  }
+  .twoblocks .bigimage, .help_box .bigimage, .contact_box .bigimage, .faq_box .bigimage, .features_box .bigimage, .experience_box .bigimage, .buttonedheader .bigimage, .welcome_box .bigimage {
+    order: -1;
+  }
+}
+@media (max-width: 640px) {
+  .twoblocks .bigimage, .help_box .bigimage, .contact_box .bigimage, .faq_box .bigimage, .features_box .bigimage, .experience_box .bigimage, .buttonedheader .bigimage, .welcome_box .bigimage {
+    width: 100%;
+  }
+}
+
 .headline {
   color: #ef6d58;
   text-transform: uppercase;
@@ -131,62 +186,58 @@ section {
   letter-spacing: 3px;
 }
 
-h1 {
+h1,
+.h1 {
   font-weight: 800;
   font-size: 72px;
   letter-spacing: -2px;
   line-height: 80px;
 }
 @media (max-width: 1024px) {
-  h1 {
+  h1,
+  .h1 {
     font-size: 56px;
     letter-spacing: -1px;
     line-height: 64px;
   }
 }
 
-h2 {
+h2,
+.h2 {
   font-weight: 800;
   font-size: 56px;
   letter-spacing: -1px;
   line-height: 64px;
 }
 @media (max-width: 1024px) {
-  h2 {
+  h2,
+  .h2 {
     font-size: 40px;
     letter-spacing: 0;
     line-height: 48px;
   }
 }
 
-h3, .experience_cards li .number {
+h3, .experience_cards li .number,
+.h3 {
   font-weight: 800;
   font-size: 40px;
   letter-spacing: 0;
   line-height: 48px;
 }
 
-h4, .reviews_cards li .client_name {
+h4, .reviews_cards li .client_name,
+.h4 {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
 }
 
-h5, .experience_cards li .signature {
+h5, .experience_cards li .signature,
+.h5 {
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
-}
-
-.dark {
-  color: #391400;
-  width: 470px;
-  text-align: center;
-}
-@media (max-width: 640px) {
-  .dark {
-    width: 90%;
-  }
 }
 
 .button, .button-white, .button-orange, .button-transparent {
@@ -233,6 +284,59 @@ h5, .experience_cards li .signature {
   text-decoration: underline;
 }
 
+.faq_cards {
+  display: flex;
+  flex-direction: column;
+}
+.faq_cards li:not(:first-child) {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.faq_cards li {
+  flex-direction: column;
+  gap: 40px;
+  padding: 35px;
+  margin-left: 0;
+  margin-top: -1px;
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+}
+.faq_cards li.active {
+  background-color: white;
+}
+.faq_cards li .item {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.badge {
+  background-color: #ef6d58;
+  padding: 40px;
+  border-radius: 50%;
+  position: relative;
+}
+.badge img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner {
+  background-color: #ef6d58;
+  padding: 50px 100px;
+  box-sizing: border-box;
+}
+@media (max-width: 601px) {
+  .banner {
+    padding: 40px 20px;
+  }
+}
+
 .textcontent {
   display: flex;
   align-items: start;
@@ -273,6 +377,12 @@ h5, .experience_cards li .signature {
   align-items: end;
   justify-content: start;
 }
+.header_logo a {
+  text-decoration: none;
+}
+.header_logo a:hover {
+  color: #b1b2b9;
+}
 .header_menu {
   gap: 5%;
   line-height: 32px;
@@ -290,26 +400,98 @@ h5, .experience_cards li .signature {
   color: white;
 }
 
-.about_box {
+.expand {
+  padding: 16px;
+  background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
+}
+.expand img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.expand:hover {
+  cursor: pointer;
+}
+.expand:hover img {
+  filter: invert(80%);
+}
+
+form input,
+form select,
+form textarea {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: inherit;
+  color: #7f6454;
+}
+
+.formcontainer {
+  flex-direction: column;
+  gap: 25px;
+  padding: 5%;
+  width: 50%;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
+  align-items: stretch;
+  justify-content: start;
 }
 @media (max-width: 1024px) {
-  .about_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .about_box .bigimage {
-    order: -1;
+  .formcontainer {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
-@media (max-width: 640px) {
-  .about_box .bigimage {
-    width: 100%;
-  }
+.formcontainer button {
+  align-self: end;
+}
+.formcontainer form {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.bulletedlist {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.bulletedlist li {
+  gap: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.bulletedlist .bullet {
+  padding: 16px;
+  background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
+}
+.bulletedlist .bullet img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bordered, .bottom_box, .newsletter .wrapper, .newsletter .blog_main {
+  border-top-width: 1px;
+  border-top-style: solid;
+  padding-top: 50px;
+}
+
+.top .textcontent {
+  align-items: center;
+  text-align: center;
 }
 
 .service_box {
@@ -359,18 +541,6 @@ h5, .experience_cards li .signature {
   align-items: center;
   justify-content: start;
 }
-.service_cards li .line .badge {
-  background-color: #ef6d58;
-  padding: 40px;
-  border-radius: 50%;
-  position: relative;
-}
-.service_cards li .line .badge img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .service_cards li .line .morecircle {
   background-color: white;
   padding: 20px;
@@ -394,30 +564,9 @@ h5, .experience_cards li .signature {
   display: inline-block;
 }
 
-.buttonedheader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
 @media (min-width: 1025px) {
   .buttonedheader {
     align-items: end;
-  }
-}
-@media (max-width: 1024px) {
-  .buttonedheader {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .buttonedheader .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .buttonedheader .bigimage {
-    width: 100%;
   }
 }
 .buttonedheader .textcontent {
@@ -491,27 +640,6 @@ h5, .experience_cards li .signature {
 .experience {
   background-color: #fdf0e9;
 }
-.experience_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
-@media (max-width: 1024px) {
-  .experience_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .experience_box .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .experience_box .bigimage {
-    width: 100%;
-  }
-}
 .experience_cards {
   margin-top: 60px;
 }
@@ -566,54 +694,8 @@ h5, .experience_cards li .signature {
   .experience_cards li {
     flex-direction: column;
     text-align: center;
+    gap: 25px;
   }
-}
-
-.features_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
-@media (max-width: 1024px) {
-  .features_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .features_box .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .features_box .bigimage {
-    width: 100%;
-  }
-}
-.features_ul {
-  flex-direction: column;
-  gap: 20px;
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-}
-.features_ul li {
-  gap: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-}
-.features_ul .bullet {
-  padding: 16px;
-  background-color: #ef6d58;
-  border-radius: 50%;
-  position: relative;
-}
-.features_ul .bullet img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .started {
@@ -739,71 +821,6 @@ h5, .experience_cards li .signature {
   }
 }
 
-.faq_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
-@media (max-width: 1024px) {
-  .faq_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .faq_box .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .faq_box .bigimage {
-    width: 100%;
-  }
-}
-.faq_cards {
-  display: flex;
-  flex-direction: column;
-}
-.faq_cards li:not(:first-child) {
-  margin-top: -1px;
-  margin-left: 0;
-}
-.faq_cards li {
-  flex-direction: column;
-  gap: 40px;
-  padding: 35px;
-  margin-left: 0;
-  margin-top: -1px;
-  display: flex;
-  border-width: 1px;
-  border-style: solid;
-  border-color: inherit;
-}
-.faq_cards li .item {
-  gap: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.faq_cards li .expand {
-  padding: 16px;
-  background-color: #ef6d58;
-  border-radius: 50%;
-  position: relative;
-}
-.faq_cards li .expand img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.faq_cards li .expand:hover {
-  cursor: pointer;
-}
-.faq_cards li .expand:hover img {
-  filter: invert(80%);
-}
-
 .logos {
   margin-top: 60px;
   flex-wrap: wrap;
@@ -814,9 +831,6 @@ h5, .experience_cards li .signature {
 }
 .logos li {
   cursor: pointer;
-}
-.logos li:hover {
-  filter: brightness(125%);
 }
 @media (max-width: 1024px) {
   .logos {
@@ -900,23 +914,6 @@ h5, .experience_cards li .signature {
   display: block;
 }
 
-form input,
-form select,
-form textarea {
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: inherit;
-  color: #7f6454;
-}
-
-.bordered, .bottom_box, .newsletter .wrapper, .newsletter .blog_main {
-  border-top-width: 1px;
-  border-top-style: solid;
-  padding-top: 50px;
-}
-
 .newsletter form {
   gap: 20px;
   display: flex;
@@ -938,54 +935,6 @@ form textarea {
 .newsletter form input {
   background-color: white;
 }
-.contact_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
-@media (max-width: 1024px) {
-  .contact_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .contact_box .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .contact_box .bigimage {
-    width: 100%;
-  }
-}
-.contact .formcontainer {
-  flex-direction: column;
-  gap: 25px;
-  padding: 5%;
-  width: 50%;
-  border-radius: 10px;
-  display: flex;
-  align-items: stretch;
-  justify-content: start;
-}
-@media (max-width: 1024px) {
-  .contact .formcontainer {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
-.contact button {
-  align-self: end;
-}
-.contact form {
-  flex-direction: column;
-  gap: 20px;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-}
-
 .contacts {
   flex-direction: column;
   display: flex;
@@ -1010,28 +959,6 @@ form textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.help_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10%;
-}
-@media (max-width: 1024px) {
-  .help_box {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-  }
-  .help_box .bigimage {
-    order: -1;
-  }
-}
-@media (max-width: 640px) {
-  .help_box .bigimage {
-    width: 100%;
-  }
 }
 
 .works {
@@ -1123,6 +1050,9 @@ form textarea {
     gap: 40px;
   }
 }
+.bottom_box .copyright {
+  text-align: center;
+}
 .bottom_box .docs {
   width: 30%;
   gap: 20%;
@@ -1140,9 +1070,6 @@ form textarea {
   .bottom_box .docs {
     justify-content: space-between;
   }
-}
-.bottom_box .docs p {
-  text-align: center;
 }
 .bottom_box .docs li {
   white-space: nowrap;

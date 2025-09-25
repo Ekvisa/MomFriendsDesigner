@@ -1,332 +1,356 @@
-// @import url(./shared/header.css);
+// @import "_variables";
+@import "_common";
 
-$darkColor: #28293e;
-$darkStrongText: #391400;
-$lightsectionText: #7f6454;
-$darksectionText: #b1b2b9;
-$lightsectionBorder: #f3d1bf;
-$darksectionBorder: #3a3c56;
-$orangeColor: #ef6d58;
-$lightColor: #fdf0e9;
+// * {
+//   margin: 0;
+//   padding: 0;
+//   font-family: "Epilogue", sans-serif;
+//   font-optical-sizing: auto;
+//   font-style: normal;
+//   font-size: 16px;
+// }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Epilogue", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 16px;
-}
+// @mixin flex($align: center, $justify: center) {
+//   display: flex;
+//   align-items: $align;
+//   justify-content: $justify;
+// }
 
-@mixin flex($align: center, $justify: center) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-}
+// .bigimage {
+//   width: 50%;
+// }
 
-.bigimage {
-  width: 50%;
-}
+// p {
+//   line-height: 32px;
+// }
 
-p {
-  line-height: 32px;
-}
+// a {
+//   color: inherit;
+//   font-size: inherit;
+// }
 
-a {
-  color: inherit;
-  font-size: inherit;
-}
+// b {
+//   font-weight: normal;
+// }
 
-b {
-  font-weight: normal;
-}
+// li {
+//   list-style-type: none;
+// }
 
-li {
-  list-style-type: none;
-}
+// input {
+//   border-style: solid;
+//   border-width: 1px;
+//   border-radius: 5px;
+//   padding: 10px;
+// }
 
-input {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-  padding: 10px;
-}
+// .lightsection .banner {
+//   // yes, it has the same styles as .darksection, but we can't just join them because of nested blocks (.banner is inside .lightsection on the Service page)
+//   color: $darksectionText;
+//   h2 {
+//     color: white;
+//   }
+// }
 
-.darksection {
-  background-color: $darkColor;
-  color: $darksectionText;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  b {
-    color: white;
-  }
-  * {
-    border-color: $darksectionBorder;
-  }
-}
+// .darksection {
+//   background-color: $darkColor;
+//   color: $darksectionText;
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   .h1,
+//   .h2,
+//   .h3,
+//   .h4,
+//   .h5,
+//   b {
+//     color: white;
+//   }
+//   * {
+//     border-color: $darksectionBorder;
+//   }
+//   .logos li {
+//     img {
+//       filter: invert(23%) sepia(14%) saturate(1104%) hue-rotate(198deg)
+//         brightness(93%) contrast(92%); // close to $lightsectionBorder color (I used filter generator: https://codepen.io/sosuke/pen/Pjoqqp)
+//       &:hover {
+//         filter: invert(80%) sepia(6%) saturate(226%) hue-rotate(195deg)
+//           brightness(89%) contrast(89%); // close to $lightsectionText color
+//       }
+//     }
+//   }
+// }
 
-.lightsection {
-  background-color: $lightColor;
-  color: $lightsectionText;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  b {
-    color: $darkStrongText;
-  }
-  * {
-    border-color: $lightsectionBorder;
-  }
-}
-section {
-  padding: 100px 10%;
-}
+// .lightsection {
+//   background-color: $lightColor;
+//   color: $lightsectionText;
+//   h1,
+//   h2,
+//   h3,
+//   h4,
+//   h5,
+//   .h1,
+//   .h2,
+//   .h3,
+//   .h4,
+//   .h5,
+//   b {
+//     color: $darkStrongText;
+//   }
+//   * {
+//     border-color: $lightsectionBorder;
+//   }
+//   .logos li {
+//     img {
+//       filter: invert(100%) sepia(47%) saturate(1748%) hue-rotate(297deg)
+//         brightness(100%) contrast(90%); // close to $darksectionBorder color
+//       &:hover {
+//         filter: invert(37%) sepia(5%) saturate(2468%) hue-rotate(338deg)
+//           brightness(105%) contrast(85%); // close to $darksectionText color
+//       }
+//     }
+//   }
+// }
 
-.wrapper {
-  // padding: 60px 0;
-  max-width: 1440px;
-  margin: 0 auto;
-}
+// section {
+//   padding: 100px 10%;
+// }
 
-@mixin twoblocks {
-  @include flex(center, space-between);
-  gap: 10%;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: start;
-    gap: 50px;
-    .bigimage {
-      order: -1;
-    }
-  }
-  @media (max-width: 640px) {
-    .bigimage {
-      width: 100%;
-    }
-  }
-}
+// .wrapper {
+//   max-width: 1440px;
+//   margin: 0 auto;
+// }
 
-.headline {
-  color: $orangeColor;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 3px;
-}
+// .twoblocks {
+//   @include flex(center, space-between);
+//   gap: 10%;
+//   @media (max-width: 1024px) {
+//     flex-direction: column;
+//     align-items: start;
+//     gap: 50px;
+//     .bigimage {
+//       order: -1;
+//     }
+//   }
+//   @media (max-width: 640px) {
+//     .bigimage {
+//       width: 100%;
+//     }
+//   }
+// }
 
-h1 {
-  font-weight: 800;
-  font-size: 72px;
-  letter-spacing: -2px;
-  line-height: 80px;
-  @media (max-width: 1024px) {
-    font-size: 56px;
-    letter-spacing: -1px;
-    line-height: 64px;
-  }
-}
+// .headline {
+//   color: $brightColor;
+//   text-transform: uppercase;
+//   font-weight: 400;
+//   letter-spacing: 3px;
+// }
 
-h2 {
-  font-weight: 800;
-  font-size: 56px;
-  letter-spacing: -1px;
-  line-height: 64px;
-  @media (max-width: 1024px) {
-    font-size: 40px;
-    letter-spacing: 0;
-    line-height: 48px;
-  }
-}
+// h1,
+// .h1 {
+//   font-weight: 800;
+//   font-size: 72px;
+//   letter-spacing: -2px;
+//   line-height: 80px;
+//   @media (max-width: 1024px) {
+//     font-size: 56px;
+//     letter-spacing: -1px;
+//     line-height: 64px;
+//   }
+// }
 
-h3 {
-  font-weight: 800;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: 48px;
-}
+// h2,
+// .h2 {
+//   font-weight: 800;
+//   font-size: 56px;
+//   letter-spacing: -1px;
+//   line-height: 64px;
+//   @media (max-width: 1024px) {
+//     font-size: 40px;
+//     letter-spacing: 0;
+//     line-height: 48px;
+//   }
+// }
 
-@mixin h4style {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
-}
-h4 {
-  @include h4style();
-}
+// h3,
+// .h3 {
+//   font-weight: 800;
+//   font-size: 40px;
+//   letter-spacing: 0;
+//   line-height: 48px;
+// }
 
-h5 {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-}
+// @mixin h4style {
+//   font-weight: 700;
+//   font-size: 24px;
+//   line-height: 32px;
+// }
 
-.dark {
-  color: $darkStrongText;
-  width: 470px;
-  text-align: center;
-  @media (max-width: 640px) {
-    width: 90%;
-  }
-}
+// h4,
+// .h4 {
+//   @include h4style();
+// }
 
-.button {
-  font-size: 14px;
-  font-weight: 900;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  flex-shrink: 0;
-  &:hover {
-    background-color: white;
-    color: $orangeColor;
-    box-shadow: none;
-  }
-}
+// h5,
+// .h5 {
+//   font-weight: 400;
+//   font-size: 20px;
+//   line-height: 32px;
+// }
 
-.button-transparent {
-  @extend .button;
-  background-color: inherit;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
+// .button {
+//   font-size: 14px;
+//   font-weight: 900;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   border: none;
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   cursor: pointer;
+//   flex-shrink: 0;
+//   &:hover {
+//     background-color: white;
+//     color: $brightColor;
+//     box-shadow: none;
+//   }
+// }
 
-.button-orange {
-  @extend .button;
-  background-color: $orangeColor;
-  color: white;
-}
+// .button-transparent {
+//   @extend .button;
+//   background-color: inherit;
+//   color: white;
+//   border: 1px solid rgba(255, 255, 255, 0.5);
+// }
 
-.button-white {
-  @extend .button;
-  background-color: white;
-  color: $darkColor;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+// .button-orange {
+//   @extend .button;
+//   background-color: $brightColor;
+//   color: white;
+// }
 
-.jumplink {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    transform: translateY(-2px);
-    text-decoration: underline;
-  }
-}
+// .button-white {
+//   @extend .button;
+//   background-color: white;
+//   color: $darkColor;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+// }
 
-@mixin round {
-  border-radius: 50%;
-  position: relative;
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+// .jumplink {
+//   display: block;
+//   text-decoration: none;
+//   color: inherit;
+//   &:hover {
+//     transform: translateY(-2px);
+//     text-decoration: underline;
+//   }
+// }
 
-@mixin cards-horisontal {
-  display: flex;
-  flex-direction: row;
-  li {
-    &:not(:first-child) {
-      margin-left: -1px;
-      margin-top: 0;
-    }
-  }
-}
-@mixin cards-vertical {
-  display: flex;
-  flex-direction: column;
-  li {
-    &:not(:first-child) {
-      margin-top: -1px;
-      margin-left: 0;
-    }
-  }
-}
+// .banner {
+//   background-color: $brightColor;
+//   padding: 50px 100px;
+//   box-sizing: border-box;
+// }
 
-@mixin card {
-  display: flex;
-  border-width: 1px;
-  border-style: solid;
-  border-color: inherit;
-}
+// @mixin round {
+//   border-radius: 50%;
+//   position: relative;
+//   img {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }
 
-.textcontent {
-  @include flex(start, center);
-  flex-direction: column;
-  gap: 25px;
-}
+// @mixin cards-horisontal {
+//   display: flex;
+//   flex-direction: row;
+//   li {
+//     &:not(:first-child) {
+//       margin-left: -1px;
+//       margin-top: 0;
+//     }
+//   }
+// }
 
-.center {
-  align-items: center;
-  text-align: center;
-}
+// @mixin cards-vertical {
+//   display: flex;
+//   flex-direction: column;
+//   li {
+//     &:not(:first-child) {
+//       margin-top: -1px;
+//       margin-left: 0;
+//     }
+//   }
+// }
 
-.header {
-  gap: 15%;
-  margin-bottom: 100px;
-  @include flex(last baseline, space-between);
-  .button-contact {
-    @media (max-width: 1024px) {
-      display: none;
-    }
-  }
-  .button-drop {
-    background: url(../images/bars.svg) no-repeat center;
-    height: 37px;
-    @media (min-width: 641px) {
-      display: none;
-    }
-  }
+// @mixin card {
+//   display: flex;
+//   border-width: 1px;
+//   border-style: solid;
+//   border-color: inherit;
+// }
+
+// .textcontent {
+//   @include flex(start, center);
+//   flex-direction: column;
+//   gap: 25px;
+// }
+
+// .center {
+//   align-items: center;
+//   text-align: center;
+// }
+
+// .header {
+//   gap: 15%;
+//   margin-bottom: 100px;
+//   @include flex(last baseline, space-between);
+//   .button-contact {
+//     @media (max-width: 1024px) {
+//       display: none;
+//     }
+//   }
+//   .button-drop {
+//     background: url(../images/bars.svg) no-repeat center;
+//     height: 37px;
+//     @media (min-width: 641px) {
+//       display: none;
+//     }
+//   }
+//   &_logo {
+//     gap: 10px;
+//     @include flex(end, start);
+//     a {
+//       text-decoration: none;
+//       &:hover {
+//         color: $darksectionText;
+//       }
+//     }
+//   }
+//   &_menu {
+//     gap: 5%;
+//     line-height: 32px;
+//     flex-grow: 1;
+//     @include flex(end, space-between);
+
+//     @media (max-width: 640px) {
+//       display: none;
+//     }
+//     li {
+//       a {
+//         @extend .jumplink;
+//         color: white;
+//       }
+//     }
+//   }
+// }
+
+.welcome {
   &_box {
-    // gap: 15%;
-    // @include flex(last baseline, space-between);
-    // .button-contact {
-    //   @media (max-width: 1024px) {
-    //     display: none;
-    //   }
-    // }
-    // .button-drop {
-    //   background: url(../images/bars.svg) no-repeat center;
-    //   height: 37px;
-    //   @media (min-width: 641px) {
-    //     display: none;
-    //   }
-    // }
-  }
-  &_logo {
-    gap: 10px;
-    @include flex(end, start);
-  }
-  &_menu {
-    gap: 5%;
-    line-height: 32px;
-    flex-grow: 1;
-    @include flex(end, space-between);
-
-    @media (max-width: 640px) {
-      display: none;
-    }
-    li {
-      a {
-        @extend .jumplink;
-        color: white;
-      }
-    }
-  }
-}
-
-.about {
-  &_box {
-    @include twoblocks();
+    @extend .twoblocks;
   }
 }
 
@@ -356,11 +380,11 @@ h5 {
         gap: 20px;
         flex-wrap: wrap;
         @include flex(center, start);
-        .badge {
-          background-color: $orangeColor;
-          padding: 40px;
-          @include round;
-        }
+        // .badge {
+        //   background-color: $brightColor;
+        //   padding: 40px;
+        //   @include round;
+        // }
         .morecircle {
           background-color: white;
           padding: 20px;
@@ -383,11 +407,10 @@ h5 {
 }
 
 .buttonedheader {
-  // margin-bottom: 60px;
   @media (min-width: 1025px) {
     align-items: end;
   }
-  @include twoblocks();
+  @extend .twoblocks;
   .textcontent {
     transform: translateY(
       10px
@@ -456,7 +479,7 @@ h5 {
 .experience {
   background-color: $lightColor;
   &_box {
-    @include twoblocks();
+    @extend .twoblocks;
   }
   &_cards {
     margin-top: 60px;
@@ -477,7 +500,7 @@ h5 {
       @include card;
       .badge {
         padding: 56px;
-        background-color: $orangeColor;
+        background-color: $brightColor;
         @include round;
       }
       .number {
@@ -489,37 +512,36 @@ h5 {
       @media ((min-width: 641px) and (max-width: 1024px)) or (max-width: 500px) {
         flex-direction: column;
         text-align: center;
+        gap: 25px;
       }
     }
   }
 }
 
 .features {
-  // padding-bottom: 50px;
   &_box {
-    @include twoblocks();
+    @extend .twoblocks;
   }
-  &_ul {
-    flex-direction: column;
-    gap: 20px;
-    @include flex(start, space-between);
-    li {
-      gap: 14px;
-      @include flex(center, start);
-    }
-    .bullet {
-      padding: 16px;
-      background-color: $orangeColor;
-      @include round;
-    }
-  }
+  // &_ul {
+  //   flex-direction: column;
+  //   gap: 20px;
+  //   @include flex(start, space-between);
+  //   li {
+  //     gap: 14px;
+  //     @include flex(center, start);
+  //   }
+  //   .bullet {
+  //     padding: 16px;
+  //     background-color: $brightColor;
+  //     @include round;
+  //   }
+  // }
 }
 
 .started {
   background-color: #f9e5da;
   &_box {
     gap: 10%;
-    // padding: 60px 0;
     position: relative;
     @include flex(center, center);
     @media (max-width: 1024px) {
@@ -538,14 +560,10 @@ h5 {
 
     &:hover {
       cursor: pointer;
-      // transform: translate(0%, -50%) scale(1.2);
       transform: scale(1.2);
-      filter: drop-shadow(0 0 20px $orangeColor) hue-rotate(45deg)
+      filter: drop-shadow(0 0 20px $brightColor) hue-rotate(45deg)
         brightness(160%);
     }
-    // @media (max-width: 1024px) {
-    //   left: 25px;
-    // }
   }
   &_img {
     @media (max-width: 640px) {
@@ -617,40 +635,29 @@ h5 {
 
 .faq {
   &_box {
-    @include twoblocks;
+    @extend .twoblocks;
     a {
       @extend .jumplink;
     }
   }
-  &_cards {
-    @include cards-vertical;
-    li {
-      flex-direction: column;
-      gap: 40px;
-      padding: 35px;
-      margin-left: 0;
-      margin-top: -1px;
-      @include card;
-      &.active {
-        @extend .lightsection;
-      }
-      .item {
-        gap: 20px;
-        @include flex(center, space-between);
-      }
-      .expand {
-        padding: 16px;
-        background-color: $orangeColor;
-        @include round;
-        &:hover {
-          cursor: pointer;
-          img {
-            filter: invert(80%);
-          }
-        }
-      }
-    }
-  }
+  // &_cards {
+  //   @include cards-vertical;
+  //   li {
+  //     flex-direction: column;
+  //     gap: 40px;
+  //     padding: 35px;
+  //     margin-left: 0;
+  //     margin-top: -1px;
+  //     @include card;
+  //     &.active {
+  //       @extend .lightsection;
+  //     }
+  //     .item {
+  //       gap: 20px;
+  //       @include flex(center, space-between);
+  //     }
+  //   }
+  // }
 }
 
 .logos {
@@ -660,9 +667,6 @@ h5 {
   @include flex(center, space-between);
   li {
     cursor: pointer;
-    &:hover {
-      filter: brightness(125%);
-    }
   }
   @media (max-width: 1024px) {
     justify-content: space-around;
@@ -737,24 +741,24 @@ h5 {
   }
 }
 
-form {
-  input,
-  select,
-  textarea {
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: inherit;
-    color: $lightsectionText;
-  }
-}
+// form {
+//   input,
+//   select,
+//   textarea {
+//     border-width: 1px;
+//     border-style: solid;
+//     border-radius: 5px;
+//     padding: 10px;
+//     background-color: inherit;
+//     color: $lightsectionText;
+//   }
+// }
 
-.bordered {
-  border-top-width: 1px;
-  border-top-style: solid;
-  padding-top: 50px;
-}
+// .bordered {
+//   border-top-width: 1px;
+//   border-top-style: solid;
+//   padding-top: 50px;
+// }
 
 .newsletter {
   form {
@@ -781,29 +785,29 @@ form {
 
 .contact {
   &_box {
-    @include twoblocks();
+    @extend .twoblocks;
   }
-  .formcontainer {
-    flex-direction: column;
-    gap: 25px;
-    padding: 5%;
-    width: 50%;
-    border-radius: 10px;
-    @extend .lightsection;
-    @include flex(stretch, start);
-    @media (max-width: 1024px) {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  }
-  button {
-    align-self: end;
-  }
-  form {
-    flex-direction: column;
-    gap: 20px;
-    @include flex(stretch, center);
-  }
+  // .formcontainer {
+  //   flex-direction: column;
+  //   gap: 25px;
+  //   padding: 5%;
+  //   width: 50%;
+  //   border-radius: 10px;
+  //   @extend .lightsection;
+  //   @include flex(stretch, start);
+  //   @media (max-width: 1024px) {
+  //     width: 100%;
+  //     box-sizing: border-box;
+  //   }
+  // }
+  // button {
+  //   align-self: end;
+  // }
+  // form {
+  //   flex-direction: column;
+  //   gap: 20px;
+  //   @include flex(stretch, center);
+  // }
 }
 
 .contacts {
@@ -815,7 +819,7 @@ form {
     @extend b;
     @include flex(center, start);
     .contacttype {
-      background-color: $orangeColor;
+      background-color: $brightColor;
       padding: 24px;
       @include round;
     }
@@ -824,7 +828,7 @@ form {
 
 .help {
   &_box {
-    @include twoblocks;
+    @extend .twoblocks;
   }
 }
 .works {
@@ -881,7 +885,7 @@ form {
 
     li {
       padding: 25px;
-      background-color: $orangeColor;
+      background-color: $brightColor;
       @include round;
 
       a:hover {
@@ -903,6 +907,9 @@ form {
       justify-content: center;
       gap: 40px;
     }
+    .copyright {
+      text-align: center;
+    }
     .docs {
       width: 30%;
       gap: 20%;
@@ -914,9 +921,6 @@ form {
       }
       @media (max-width: 640px) {
         justify-content: space-between;
-      }
-      p {
-        text-align: center;
       }
       li {
         white-space: nowrap;

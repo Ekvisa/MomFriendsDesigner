@@ -1,0 +1,26 @@
+// @import "_variables";
+@import "_common";
+
+.top {
+  .narrow {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.narrow {
+  margin: 60px auto;
+  max-width: 600px;
+}
+
+.videoimage {
+  width: 100%;
+}
+
+.photo {
+  width: 100%;
+}
+
+.quote {
+  background: url(../images/aboutpage/quotes.png) 100% 0 no-repeat;
+}
