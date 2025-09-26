@@ -1,352 +1,4 @@
-// @import "_variables";
 @import "_common";
-
-// * {
-//   margin: 0;
-//   padding: 0;
-//   font-family: "Epilogue", sans-serif;
-//   font-optical-sizing: auto;
-//   font-style: normal;
-//   font-size: 16px;
-// }
-
-// @mixin flex($align: center, $justify: center) {
-//   display: flex;
-//   align-items: $align;
-//   justify-content: $justify;
-// }
-
-// .bigimage {
-//   width: 50%;
-// }
-
-// p {
-//   line-height: 32px;
-// }
-
-// a {
-//   color: inherit;
-//   font-size: inherit;
-// }
-
-// b {
-//   font-weight: normal;
-// }
-
-// li {
-//   list-style-type: none;
-// }
-
-// input {
-//   border-style: solid;
-//   border-width: 1px;
-//   border-radius: 5px;
-//   padding: 10px;
-// }
-
-// .lightsection .banner {
-//   // yes, it has the same styles as .darksection, but we can't just join them because of nested blocks (.banner is inside .lightsection on the Service page)
-//   color: $darksectionText;
-//   h2 {
-//     color: white;
-//   }
-// }
-
-// .darksection {
-//   background-color: $darkColor;
-//   color: $darksectionText;
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   .h1,
-//   .h2,
-//   .h3,
-//   .h4,
-//   .h5,
-//   b {
-//     color: white;
-//   }
-//   * {
-//     border-color: $darksectionBorder;
-//   }
-//   .logos li {
-//     img {
-//       filter: invert(23%) sepia(14%) saturate(1104%) hue-rotate(198deg)
-//         brightness(93%) contrast(92%); // close to $lightsectionBorder color (I used filter generator: https://codepen.io/sosuke/pen/Pjoqqp)
-//       &:hover {
-//         filter: invert(80%) sepia(6%) saturate(226%) hue-rotate(195deg)
-//           brightness(89%) contrast(89%); // close to $lightsectionText color
-//       }
-//     }
-//   }
-// }
-
-// .lightsection {
-//   background-color: $lightColor;
-//   color: $lightsectionText;
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5,
-//   .h1,
-//   .h2,
-//   .h3,
-//   .h4,
-//   .h5,
-//   b {
-//     color: $darkStrongText;
-//   }
-//   * {
-//     border-color: $lightsectionBorder;
-//   }
-//   .logos li {
-//     img {
-//       filter: invert(100%) sepia(47%) saturate(1748%) hue-rotate(297deg)
-//         brightness(100%) contrast(90%); // close to $darksectionBorder color
-//       &:hover {
-//         filter: invert(37%) sepia(5%) saturate(2468%) hue-rotate(338deg)
-//           brightness(105%) contrast(85%); // close to $darksectionText color
-//       }
-//     }
-//   }
-// }
-
-// section {
-//   padding: 100px 10%;
-// }
-
-// .wrapper {
-//   max-width: 1440px;
-//   margin: 0 auto;
-// }
-
-// .twoblocks {
-//   @include flex(center, space-between);
-//   gap: 10%;
-//   @media (max-width: 1024px) {
-//     flex-direction: column;
-//     align-items: start;
-//     gap: 50px;
-//     .bigimage {
-//       order: -1;
-//     }
-//   }
-//   @media (max-width: 640px) {
-//     .bigimage {
-//       width: 100%;
-//     }
-//   }
-// }
-
-// .headline {
-//   color: $brightColor;
-//   text-transform: uppercase;
-//   font-weight: 400;
-//   letter-spacing: 3px;
-// }
-
-// h1,
-// .h1 {
-//   font-weight: 800;
-//   font-size: 72px;
-//   letter-spacing: -2px;
-//   line-height: 80px;
-//   @media (max-width: 1024px) {
-//     font-size: 56px;
-//     letter-spacing: -1px;
-//     line-height: 64px;
-//   }
-// }
-
-// h2,
-// .h2 {
-//   font-weight: 800;
-//   font-size: 56px;
-//   letter-spacing: -1px;
-//   line-height: 64px;
-//   @media (max-width: 1024px) {
-//     font-size: 40px;
-//     letter-spacing: 0;
-//     line-height: 48px;
-//   }
-// }
-
-// h3,
-// .h3 {
-//   font-weight: 800;
-//   font-size: 40px;
-//   letter-spacing: 0;
-//   line-height: 48px;
-// }
-
-// @mixin h4style {
-//   font-weight: 700;
-//   font-size: 24px;
-//   line-height: 32px;
-// }
-
-// h4,
-// .h4 {
-//   @include h4style();
-// }
-
-// h5,
-// .h5 {
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 32px;
-// }
-
-// .button {
-//   font-size: 14px;
-//   font-weight: 900;
-//   padding: 10px 20px;
-//   border-radius: 5px;
-//   border: none;
-//   text-transform: uppercase;
-//   font-weight: bold;
-//   cursor: pointer;
-//   flex-shrink: 0;
-//   &:hover {
-//     background-color: white;
-//     color: $brightColor;
-//     box-shadow: none;
-//   }
-// }
-
-// .button-transparent {
-//   @extend .button;
-//   background-color: inherit;
-//   color: white;
-//   border: 1px solid rgba(255, 255, 255, 0.5);
-// }
-
-// .button-orange {
-//   @extend .button;
-//   background-color: $brightColor;
-//   color: white;
-// }
-
-// .button-white {
-//   @extend .button;
-//   background-color: white;
-//   color: $darkColor;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-// }
-
-// .jumplink {
-//   display: block;
-//   text-decoration: none;
-//   color: inherit;
-//   &:hover {
-//     transform: translateY(-2px);
-//     text-decoration: underline;
-//   }
-// }
-
-// .banner {
-//   background-color: $brightColor;
-//   padding: 50px 100px;
-//   box-sizing: border-box;
-// }
-
-// @mixin round {
-//   border-radius: 50%;
-//   position: relative;
-//   img {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//   }
-// }
-
-// @mixin cards-horisontal {
-//   display: flex;
-//   flex-direction: row;
-//   li {
-//     &:not(:first-child) {
-//       margin-left: -1px;
-//       margin-top: 0;
-//     }
-//   }
-// }
-
-// @mixin cards-vertical {
-//   display: flex;
-//   flex-direction: column;
-//   li {
-//     &:not(:first-child) {
-//       margin-top: -1px;
-//       margin-left: 0;
-//     }
-//   }
-// }
-
-// @mixin card {
-//   display: flex;
-//   border-width: 1px;
-//   border-style: solid;
-//   border-color: inherit;
-// }
-
-// .textcontent {
-//   @include flex(start, center);
-//   flex-direction: column;
-//   gap: 25px;
-// }
-
-// .center {
-//   align-items: center;
-//   text-align: center;
-// }
-
-// .header {
-//   gap: 15%;
-//   margin-bottom: 100px;
-//   @include flex(last baseline, space-between);
-//   .button-contact {
-//     @media (max-width: 1024px) {
-//       display: none;
-//     }
-//   }
-//   .button-drop {
-//     background: url(../images/bars.svg) no-repeat center;
-//     height: 37px;
-//     @media (min-width: 641px) {
-//       display: none;
-//     }
-//   }
-//   &_logo {
-//     gap: 10px;
-//     @include flex(end, start);
-//     a {
-//       text-decoration: none;
-//       &:hover {
-//         color: $darksectionText;
-//       }
-//     }
-//   }
-//   &_menu {
-//     gap: 5%;
-//     line-height: 32px;
-//     flex-grow: 1;
-//     @include flex(end, space-between);
-
-//     @media (max-width: 640px) {
-//       display: none;
-//     }
-//     li {
-//       a {
-//         @extend .jumplink;
-//         color: white;
-//       }
-//     }
-//   }
-// }
 
 .welcome {
   &_box {
@@ -380,11 +32,6 @@
         gap: 20px;
         flex-wrap: wrap;
         @include flex(center, start);
-        // .badge {
-        //   background-color: $brightColor;
-        //   padding: 40px;
-        //   @include round;
-        // }
         .morecircle {
           background-color: white;
           padding: 20px;
@@ -481,94 +128,11 @@
   &_box {
     @extend .twoblocks;
   }
-  &_cards {
-    margin-top: 60px;
-    @media (max-width: 640px) {
-      @include cards-vertical;
-    }
-    @media (min-width: 641px) {
-      @include cards-horisontal;
-      li {
-        width: 50%;
-        box-sizing: border-box;
-      }
-    }
-    li {
-      gap: 10%;
-      padding: 40px;
-      @include flex(center, start);
-      @include card;
-      .badge {
-        padding: 56px;
-        background-color: $brightColor;
-        @include round;
-      }
-      .number {
-        @extend h3;
-      }
-      .signature {
-        @extend h5;
-      }
-      @media ((min-width: 641px) and (max-width: 1024px)) or (max-width: 500px) {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-      }
-    }
-  }
 }
 
 .features {
   &_box {
     @extend .twoblocks;
-  }
-  // &_ul {
-  //   flex-direction: column;
-  //   gap: 20px;
-  //   @include flex(start, space-between);
-  //   li {
-  //     gap: 14px;
-  //     @include flex(center, start);
-  //   }
-  //   .bullet {
-  //     padding: 16px;
-  //     background-color: $brightColor;
-  //     @include round;
-  //   }
-  // }
-}
-
-.started {
-  background-color: #f9e5da;
-  &_box {
-    gap: 10%;
-    position: relative;
-    @include flex(center, center);
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: start;
-      gap: 60px;
-    }
-    @media (max-width: 640px) {
-      width: 85%;
-    }
-  }
-  .gift_img {
-    position: absolute;
-    left: 0;
-    top: -173px; // margin-top (100px) plus half of image size (146px/2=73px)
-
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.2);
-      filter: drop-shadow(0 0 20px $brightColor) hue-rotate(45deg)
-        brightness(160%);
-    }
-  }
-  &_img {
-    @media (max-width: 640px) {
-      width: 100%;
-    }
   }
 }
 
@@ -633,46 +197,6 @@
   }
 }
 
-.faq {
-  &_box {
-    @extend .twoblocks;
-    a {
-      @extend .jumplink;
-    }
-  }
-  // &_cards {
-  //   @include cards-vertical;
-  //   li {
-  //     flex-direction: column;
-  //     gap: 40px;
-  //     padding: 35px;
-  //     margin-left: 0;
-  //     margin-top: -1px;
-  //     @include card;
-  //     &.active {
-  //       @extend .lightsection;
-  //     }
-  //     .item {
-  //       gap: 20px;
-  //       @include flex(center, space-between);
-  //     }
-  //   }
-  // }
-}
-
-.logos {
-  margin-top: 60px;
-  flex-wrap: wrap;
-  gap: 2.5em;
-  @include flex(center, space-between);
-  li {
-    cursor: pointer;
-  }
-  @media (max-width: 1024px) {
-    justify-content: space-around;
-  }
-}
-
 .blog {
   &_main {
     justify-content: space-between;
@@ -731,7 +255,7 @@
     @include flex(start, start);
     .illustration {
       width: 100%;
-      border-radius: 5px;
+      border-radius: 10px;
       overflow: hidden;
     }
     img {
@@ -740,25 +264,6 @@
     }
   }
 }
-
-// form {
-//   input,
-//   select,
-//   textarea {
-//     border-width: 1px;
-//     border-style: solid;
-//     border-radius: 5px;
-//     padding: 10px;
-//     background-color: inherit;
-//     color: $lightsectionText;
-//   }
-// }
-
-// .bordered {
-//   border-top-width: 1px;
-//   border-top-style: solid;
-//   padding-top: 50px;
-// }
 
 .newsletter {
   form {
@@ -787,27 +292,6 @@
   &_box {
     @extend .twoblocks;
   }
-  // .formcontainer {
-  //   flex-direction: column;
-  //   gap: 25px;
-  //   padding: 5%;
-  //   width: 50%;
-  //   border-radius: 10px;
-  //   @extend .lightsection;
-  //   @include flex(stretch, start);
-  //   @media (max-width: 1024px) {
-  //     width: 100%;
-  //     box-sizing: border-box;
-  //   }
-  // }
-  // button {
-  //   align-self: end;
-  // }
-  // form {
-  //   flex-direction: column;
-  //   gap: 20px;
-  //   @include flex(stretch, center);
-  // }
 }
 
 .contacts {
@@ -826,11 +310,6 @@
   }
 }
 
-.help {
-  &_box {
-    @extend .twoblocks;
-  }
-}
 .works {
   @include flex(center, space-between);
   img {
@@ -854,80 +333,6 @@
     img {
       width: 50%;
       height: 50%;
-    }
-  }
-}
-
-.footer {
-  &_box {
-    margin-bottom: 60px;
-    @include flex(start, space-between);
-    @media (max-width: 640px) {
-      flex-direction: column;
-      align-items: center;
-      gap: 50px;
-    }
-  }
-  &_menu {
-    li {
-      margin: 1em 0;
-      a {
-        @extend .jumplink;
-      }
-    }
-    @media (max-width: 640px) {
-      text-align: center;
-    }
-  }
-  .social {
-    gap: 10px;
-    @include flex(start, space-between);
-
-    li {
-      padding: 25px;
-      background-color: $brightColor;
-      @include round;
-
-      a:hover {
-        img {
-          filter: invert(80%);
-        }
-      }
-    }
-  }
-}
-
-.bottom {
-  &_box {
-    gap: 20% 60px;
-    flex-wrap: wrap;
-    @extend .bordered;
-    @include flex(center, space-between);
-    @media (max-width: 1024px) {
-      justify-content: center;
-      gap: 40px;
-    }
-    .copyright {
-      text-align: center;
-    }
-    .docs {
-      width: 30%;
-      gap: 20%;
-      @include flex(center, end);
-
-      @media (max-width: 1024px) {
-        justify-content: center;
-        width: 100%;
-      }
-      @media (max-width: 640px) {
-        justify-content: space-between;
-      }
-      li {
-        white-space: nowrap;
-        a {
-          @extend .jumplink;
-        }
-      }
     }
   }
 }

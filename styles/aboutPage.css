@@ -49,13 +49,12 @@ input {
 .darksection h1,
 .darksection h2,
 .darksection h3,
+.darksection .experience_cards li .number,
+.experience_cards li .darksection .number,
 .darksection h4,
 .darksection h5,
-.darksection .h1,
-.darksection .h2,
-.darksection .h3,
-.darksection .h4,
-.darksection .h5,
+.darksection .experience_cards li .signature,
+.experience_cards li .darksection .signature,
 .darksection b {
   color: white;
 }
@@ -78,29 +77,26 @@ input {
 .formcontainer h2,
 .faq_cards li.active h2,
 .lightsection h3,
+.lightsection .experience_cards li .number,
+.experience_cards li .lightsection .number,
 .formcontainer h3,
+.formcontainer .experience_cards li .number,
+.experience_cards li .formcontainer .number,
 .faq_cards li.active h3,
+.faq_cards .experience_cards li.active .number,
+.experience_cards .faq_cards li.active .number,
 .lightsection h4,
 .formcontainer h4,
 .faq_cards li.active h4,
 .lightsection h5,
+.lightsection .experience_cards li .signature,
+.experience_cards li .lightsection .signature,
 .formcontainer h5,
+.formcontainer .experience_cards li .signature,
+.experience_cards li .formcontainer .signature,
 .faq_cards li.active h5,
-.lightsection .h1,
-.formcontainer .h1,
-.faq_cards li.active .h1,
-.lightsection .h2,
-.formcontainer .h2,
-.faq_cards li.active .h2,
-.lightsection .h3,
-.formcontainer .h3,
-.faq_cards li.active .h3,
-.lightsection .h4,
-.formcontainer .h4,
-.faq_cards li.active .h4,
-.lightsection .h5,
-.formcontainer .h5,
-.faq_cards li.active .h5,
+.faq_cards .experience_cards li.active .signature,
+.experience_cards .faq_cards li.active .signature,
 .lightsection b,
 .formcontainer b,
 .faq_cards li.active b {
@@ -125,24 +121,24 @@ section {
   margin: 0 auto;
 }
 
-.twoblocks {
+.twoblocks, .faq_box, .help_box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10%;
 }
 @media (max-width: 1024px) {
-  .twoblocks {
+  .twoblocks, .faq_box, .help_box {
     flex-direction: column;
     align-items: start;
     gap: 50px;
   }
-  .twoblocks .bigimage {
+  .twoblocks .bigimage, .faq_box .bigimage, .help_box .bigimage {
     order: -1;
   }
 }
 @media (max-width: 640px) {
-  .twoblocks .bigimage {
+  .twoblocks .bigimage, .faq_box .bigimage, .help_box .bigimage {
     width: 100%;
   }
 }
@@ -154,55 +150,48 @@ section {
   letter-spacing: 3px;
 }
 
-h1,
-.h1 {
+h1 {
   font-weight: 800;
   font-size: 72px;
   letter-spacing: -2px;
   line-height: 80px;
 }
 @media (max-width: 1024px) {
-  h1,
-  .h1 {
+  h1 {
     font-size: 56px;
     letter-spacing: -1px;
     line-height: 64px;
   }
 }
 
-h2,
-.h2 {
+h2 {
   font-weight: 800;
   font-size: 56px;
   letter-spacing: -1px;
   line-height: 64px;
 }
 @media (max-width: 1024px) {
-  h2,
-  .h2 {
+  h2 {
     font-size: 40px;
     letter-spacing: 0;
     line-height: 48px;
   }
 }
 
-h3,
-.h3 {
+h3, .experience_cards li .number {
   font-weight: 800;
   font-size: 40px;
   letter-spacing: 0;
   line-height: 48px;
 }
 
-h4,
-.h4 {
+h4 {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
 }
 
-h5,
-.h5 {
+h5, .experience_cards li .signature {
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
@@ -242,12 +231,12 @@ h5,
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.jumplink, .header_menu li a {
+.jumplink, .bottom_box .docs li a, .footer_menu li a, .header_menu li a, .faq_box a {
   display: block;
   text-decoration: none;
   color: inherit;
 }
-.jumplink:hover, .header_menu li a:hover {
+.jumplink:hover, .bottom_box .docs li a:hover, .footer_menu li a:hover, .header_menu li a:hover, .faq_box a:hover {
   transform: translateY(-2px);
   text-decoration: underline;
 }
@@ -349,7 +338,7 @@ h5,
   text-decoration: none;
 }
 .header_logo a:hover {
-  color: #b1b2b9;
+  filter: hue-rotate(45deg) brightness(160%);
 }
 .header_menu {
   gap: 5%;
@@ -425,6 +414,64 @@ form textarea {
   justify-content: center;
 }
 
+.experience_cards {
+  margin-top: 60px;
+}
+@media (max-width: 640px) {
+  .experience_cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .experience_cards li:not(:first-child) {
+    margin-top: -1px;
+    margin-left: 0;
+  }
+}
+@media (min-width: 641px) {
+  .experience_cards {
+    display: flex;
+    flex-direction: row;
+  }
+  .experience_cards li:not(:first-child) {
+    margin-left: -1px;
+    margin-top: 0;
+  }
+  .experience_cards li {
+    width: 50%;
+    box-sizing: border-box;
+  }
+}
+.experience_cards li {
+  gap: 10%;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  display: flex;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+}
+.experience_cards li .badge {
+  padding: 56px;
+  background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
+}
+.experience_cards li .badge img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media ((min-width: 641px) and (max-width: 1024px)) or (max-width: 500px) {
+  .experience_cards li {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+}
+
 .bulletedlist {
   flex-direction: column;
   gap: 20px;
@@ -451,7 +498,62 @@ form textarea {
   transform: translate(-50%, -50%);
 }
 
-.bordered {
+.started {
+  background-color: #f9e5da;
+}
+.started_box {
+  gap: 10%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .started_box {
+    flex-direction: column;
+    align-items: start;
+    gap: 60px;
+  }
+}
+@media (max-width: 640px) {
+  .started_box {
+    width: 85%;
+  }
+}
+.started .gift_img {
+  position: absolute;
+  left: 0;
+  top: -173px;
+}
+.started .gift_img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 20px #ef6d58) hue-rotate(45deg) brightness(160%);
+}
+@media (max-width: 640px) {
+  .started_img {
+    width: 100%;
+  }
+}
+
+.logos {
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logos li {
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .logos {
+    justify-content: space-around;
+  }
+}
+
+.bordered, .bottom_box {
   border-top-width: 1px;
   border-top-style: solid;
   padding-top: 50px;
@@ -462,6 +564,86 @@ form textarea {
   text-align: center;
 }
 
+.footer_box {
+  padding-bottom: 60px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .footer_box {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+}
+.footer_menu li {
+  margin: 1em 0;
+}
+@media (max-width: 640px) {
+  .footer_menu {
+    text-align: center;
+  }
+}
+.footer .social {
+  gap: 10px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.footer .social li {
+  padding: 25px;
+  background-color: #ef6d58;
+  border-radius: 50%;
+  position: relative;
+}
+.footer .social li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.footer .social li a:hover img {
+  filter: invert(80%);
+}
+
+.bottom_box {
+  gap: 20% 60px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .bottom_box {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+.bottom_box .copyright {
+  text-align: center;
+}
+.bottom_box .docs {
+  width: 30%;
+  gap: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+@media (max-width: 1024px) {
+  .bottom_box .docs {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  .bottom_box .docs {
+    justify-content: space-between;
+  }
+}
+.bottom_box .docs li {
+  white-space: nowrap;
+}
 .top .narrow {
   align-items: center;
   text-align: center;
@@ -474,10 +656,13 @@ form textarea {
 
 .videoimage {
   width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .photo {
   width: 100%;
+  border-radius: 10px;
 }
 
 .quote {
